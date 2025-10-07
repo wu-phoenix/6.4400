@@ -79,12 +79,17 @@ glm::mat4 Transform::GetLocalToParentMatrix() const {
 
 glm::mat4 Transform::GetLocalToAncestorMatrix(SceneNode* ancestor) const {
   // TODO: optionally implement this method which can become useful in SSD.
-  throw std::logic_error("Unimplemented!");
+  glm::mat4 parent_transform = glm::mat4(1.f);
+  if (node_.GetParentPtr() != ancestor) {
+    parent_transform = node_.GetParentPtr()->GetTransform().GetLocalToAncestorMatrix(ancestor);
+  }
+  return parent_transform * local_transform_mat_;
+  //might need to swap the order of this multiplication
 }
 
 glm::mat4 Transform::GetLocalToWorldMatrix() const {
   // TODO: calculate local-to-world matrix.
-  return local_transform_mat_;
+  return GetLocalToAncestorMatrix(nullptr);
 }
 
 void Transform::UpdateLocalTransformMatrix() {

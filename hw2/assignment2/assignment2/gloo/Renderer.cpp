@@ -39,6 +39,7 @@ Renderer::RenderingInfo Renderer::RetrieveRenderingInfo(
     const Scene& scene) const {
   RenderingInfo info;
   const SceneNode& root = scene.GetRootNode();
+
   // TODO: Below is an inefficient implementation that computes local-to-world
   // matrices for all nodes in the tree. Implement a more efficient version
   // with O(n) matrix multiplications that recursively compute the
@@ -47,13 +48,36 @@ Renderer::RenderingInfo Renderer::RetrieveRenderingInfo(
   // Hint: you shouldn't need root.GetComponentPtrsInChildren. Instead you
   // should create your own recursive function that collects
   // std::pair<RenderingComponent*, glm::mat4>.
-  auto robj_ptrs = root.GetComponentPtrsInChildren<RenderingComponent>();
-  for (auto ptr : robj_ptrs) {
-    auto node_ptr = ptr->GetNodePtr();
-    if (node_ptr->IsActive())
-      info.emplace_back(ptr, node_ptr->GetTransform().GetLocalToWorldMatrix());
-  }
+
+  // auto robj_ptrs = root.GetComponentPtrsInChildren<RenderingComponent>();
+  // for (auto ptr : robj_ptrs) {
+  //   auto node_ptr = ptr->GetNodePtr();
+  //   if (node_ptr->IsActive())
+  //     info.emplace_back(ptr, node_ptr->GetTransform().GetLocalToWorldMatrix());
+  // }
+  // return info;
+
+
+  // new implementation
+  RecursiveRetrieve(root, glm::mat4(1.f), info);
   return info;
+}
+
+void Renderer::RecursiveRetrieve(const SceneNode& node,
+  const glm::mat4& parent_transform,
+  RenderingInfo& info) const {
+
+    glm::mat4 local_transform = node.GetTransform().GetLocalToWorldMatrix();
+    glm::mat4 world_transform = parent_transform * local_transform;
+    
+    // add pair to rendering info
+    info.emplace_back(node.GetComponentPtr<RenderingComponent>(), world_transform);
+    // recurse for each child
+
+    int childrenct = node.GetChildrenCount();
+    for (int i = 0; i < childrenct; i++) {
+      RecursiveRetrieve(node.GetChild(i), world_transform, info);
+    }
 }
 
 void Renderer::RenderScene(const Scene& scene) const {

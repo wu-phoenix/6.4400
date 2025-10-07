@@ -18,7 +18,9 @@ class Renderer {
   using RenderingInfo = std::vector<std::pair<RenderingComponent*, glm::mat4>>;
   void RenderScene(const Scene& scene) const;
   void SetRenderingOptions() const;
-
+  void RecursiveRetrieve(const SceneNode& node,
+                          const glm::mat4& parent_transform,
+                          RenderingInfo& info) const;
   RenderingInfo RetrieveRenderingInfo(const Scene& scene) const;
 
 
