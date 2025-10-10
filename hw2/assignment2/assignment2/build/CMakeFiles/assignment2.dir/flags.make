@@ -7,11 +7,11 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glad/include -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/examples -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/stb -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2 -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/assignment_code/assignment2 -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/assignment_code/common -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glfw-3.3.2/include -isystem /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glm-0.9.9.8
 
-C_FLAGS = -O3 -DNDEBUG -Wall
+C_FLAGS = -g -Wall
 
 CXX_DEFINES = 
 
 CXX_INCLUDES = -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glad/include -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/examples -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/stb -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2 -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/assignment_code/assignment2 -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/assignment_code/common -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glfw-3.3.2/include -isystem /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glm-0.9.9.8
 
-CXX_FLAGS =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -O3 -DNDEBUG -O3 -Wall -std=gnu++11
+CXX_FLAGS =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -g -O0 -Wall -std=gnu++11
 

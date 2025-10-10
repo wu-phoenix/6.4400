@@ -6,7 +6,7 @@ C_DEFINES = -D_GLFW_USE_CONFIG_H
 
 C_INCLUDES = -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glfw-3.3.2/include -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glfw-3.3.2/src -I/home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/build/external/src/glfw-3.3.2/src
 
-C_FLAGS = -O3 -DNDEBUG -fPIC -Wall -std=gnu99
+C_FLAGS = -g -fPIC -Wall -std=gnu99
 
 # Custom flags: external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.o_FLAGS = -Wdeclaration-after-statement
 

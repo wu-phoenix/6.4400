@@ -75,7 +75,6 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/bits/shared_ptr_base.h /usr/include/c++/11/typeinfo \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/refwrap.h \
@@ -144,20 +143,16 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/c++/11/cstdio \
  /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/11/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/c++/11/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
@@ -386,8 +381,6 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/imgui.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/imconfig.h \
  /usr/include/string.h /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/examples/imgui_impl_glfw.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/examples/imgui_impl_opengl3.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glfw-3.3.2/include/GLFW/glfw3.h \
@@ -399,6 +392,8 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/gl_wrapper/IBindable.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Transform.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/PhongShader.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/InputManager.hpp \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/external.hpp \
@@ -406,4 +401,12 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/parsers/ObjParser.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Material.hpp \
- /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp \
+ /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/debug/PrimitiveFactory.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/components/ShadingComponent.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/components/ComponentBase.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/components/RenderingComponent.hpp

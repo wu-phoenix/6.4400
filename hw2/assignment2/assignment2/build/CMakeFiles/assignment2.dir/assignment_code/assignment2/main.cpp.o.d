@@ -28,7 +28,6 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/exception /usr/include/c++/11/bits/exception.h \
  /usr/include/c++/11/bits/exception_ptr.h \
  /usr/include/c++/11/bits/exception_defines.h \
@@ -115,20 +114,16 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/c++/11/cstdio \
  /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/11/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/c++/11/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
@@ -175,10 +170,7 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/imgui.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h /usr/include/string.h \
- /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /usr/include/assert.h \
+ /usr/include/strings.h /usr/include/assert.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/examples/imgui_impl_glfw.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/imgui/examples/imgui_impl_opengl3.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/external/src/glad/include/glad/glad.h \
@@ -410,4 +402,6 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/SceneNode.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/gl_wrapper/IBindable.hpp \
- /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Transform.hpp
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Transform.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/PhongShader.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp

@@ -6,7 +6,7 @@
 #include "gloo/VertexObject.hpp"
 
 namespace GLOO {
-class RenderingComponent : public ComponentBase {
+class  RenderingComponent : public ComponentBase {
  public:
   RenderingComponent(std::shared_ptr<VertexObject> vertex_obj);
   void SetDrawRange(int start_index, int num_indices);

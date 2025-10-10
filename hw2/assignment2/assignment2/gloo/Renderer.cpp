@@ -67,11 +67,14 @@ void Renderer::RecursiveRetrieve(const SceneNode& node,
   const glm::mat4& parent_transform,
   RenderingInfo& info) const {
 
-    glm::mat4 local_transform = node.GetTransform().GetLocalToWorldMatrix();
+    glm::mat4 local_transform = node.GetTransform().GetLocalToParentMatrix();
     glm::mat4 world_transform = parent_transform * local_transform;
-    
+    // glm::mat4 world_transform = local_transform * parent_transform;
+
     // add pair to rendering info
-    info.emplace_back(node.GetComponentPtr<RenderingComponent>(), world_transform);
+    if (node.GetComponentPtr<RenderingComponent>() != nullptr){
+      info.emplace_back(node.GetComponentPtr<RenderingComponent>(), world_transform); 
+    }
     // recurse for each child
 
     int childrenct = node.GetChildrenCount();

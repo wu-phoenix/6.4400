@@ -25,7 +25,7 @@ const std::vector<std::string> kJointNames = {"Root",
                                               "Right elbow",
                                               "Left collarbone",
                                               "Left shoulder",
-                                              "Left elbow"} ;
+                                              "Left elbow"};
 }
 
 namespace GLOO {

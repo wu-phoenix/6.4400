@@ -4,6 +4,7 @@
 #include "gloo/SceneNode.hpp"
 #include "gloo/VertexObject.hpp"
 #include "gloo/shaders/ShaderProgram.hpp"
+#include "gloo/shaders/PhongShader.hpp"
 
 #include <string>
 #include <vector>
@@ -29,6 +30,12 @@ class SkeletonNode : public SceneNode {
 
   void ToggleDrawMode();
   void DecorateTree();
+  std::shared_ptr<PhongShader> shader_;
+  std::shared_ptr<VertexObject> sphere_mesh_;
+  std::shared_ptr<VertexObject> cylinder_mesh_;
+  std::vector<SceneNode*> joint_nodes_ptrs_;  
+  std::vector<SceneNode*> sphere_nodes_ptrs_;
+  std::vector<SceneNode*> cylinder_nodes_ptrs_;
 
   DrawMode draw_mode_;
   // Euler angles of the UI sliders.

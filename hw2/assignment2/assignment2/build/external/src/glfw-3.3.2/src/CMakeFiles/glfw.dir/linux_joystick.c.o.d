@@ -26,7 +26,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o: \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
@@ -70,11 +69,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o: \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h /usr/include/X11/X.h \
- /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
- /usr/include/X11/keysym.h /usr/include/X11/keysymdef.h \
- /usr/include/X11/Xatom.h /usr/include/X11/Xcursor/Xcursor.h \
- /usr/include/stdio.h /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
+ /usr/include/X11/Xosdefs.h /usr/include/X11/keysym.h \
+ /usr/include/X11/keysymdef.h /usr/include/X11/Xatom.h \
+ /usr/include/X11/Xcursor/Xcursor.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
@@ -84,8 +83,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h \
  /usr/include/X11/extensions/Xrandr.h /usr/include/X11/extensions/randr.h \
  /usr/include/X11/extensions/Xrender.h /usr/include/X11/Xutil.h \
  /usr/include/X11/extensions/render.h /usr/include/X11/Xdefs.h \
@@ -138,8 +135,7 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o: \
  /usr/include/x86_64-linux-gnu/sys/inotify.h \
  /usr/include/x86_64-linux-gnu/bits/inotify.h /usr/include/fcntl.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl2.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h /usr/include/errno.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
@@ -149,9 +145,5 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o: \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/string.h \
- /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/strings.h
