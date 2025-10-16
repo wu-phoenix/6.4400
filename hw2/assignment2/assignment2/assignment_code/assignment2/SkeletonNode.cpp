@@ -18,6 +18,7 @@ SkeletonNode::SkeletonNode(const std::string& filename)
   shader_ = std::make_shared<PhongShader>();
   sphere_mesh_ = PrimitiveFactory::CreateSphere(0.03f, 10, 10);
   cylinder_mesh_ = PrimitiveFactory::CreateCylinder(0.02f, 0.1f, 10);
+  // skin_mesh_ = 
   // Load all files.
 
   if (!sphere_mesh_ || !cylinder_mesh_) {
@@ -44,6 +45,26 @@ void SkeletonNode::ToggleDrawMode() {
   // The current mode is draw_mode_;
   // Hint: you may find SceneNode::SetActive convenient here as
   // inactive nodes will not be picked up by the renderer.
+  
+  if (draw_mode_ == DrawMode::SSD) {
+    // ssd_nodes_ptrs_[0]->SetActive(true);
+    ssd_mesh_node_->SetActive(true);
+    for (auto* sphere : sphere_nodes_ptrs_) {
+      sphere->SetActive(false);
+    }
+    for (auto* cylinder : cylinder_nodes_ptrs_) {
+      cylinder->SetActive(false);
+    }
+  } else {
+    // ssd_nodes_ptrs_[0]->SetActive(false);
+    ssd_mesh_node_->SetActive(false);
+    for (auto* sphere : sphere_nodes_ptrs_) {
+      sphere->SetActive(true);
+    }
+    for (auto* cylinder : cylinder_nodes_ptrs_) {
+      cylinder->SetActive(true);
+    }
+  }
 }
 
 void SkeletonNode::DecorateTree() {
@@ -107,7 +128,43 @@ void SkeletonNode::DecorateTree() {
 //       joint_ptr->AddChild(std::move(cylinder_node));
 //       cylinder_nodes_ptrs_.push_back(cylinder_ptr);
 //     }
+  
+// SSD objects
+// use a scene node to hold transform from bind pose to world, just access joint node transform for world to joint
+
+  // Setup SSD nodes - one per joint
+
+  // SSD setup - one helper node per joint to store inverse bind pose
+  for (std::size_t i = 0; i < joint_nodes_ptrs_.size(); i++) {
+    auto joint_ptr = joint_nodes_ptrs_[i];
+
+    // Set ssd_node transform to be inverse of bind pose of joint
+    inverse_bind_matrices_.push_back(glm::inverse(joint_ptr->GetTransform().GetLocalToWorldMatrix()));
+  
   }
+
+  auto ssd_node = make_unique<SceneNode>();
+ssd_node->CreateComponent<ShadingComponent>(shader_);
+ssd_node->CreateComponent<RenderingComponent>(ssd_vertex_obj_);
+ssd_node->SetActive(false); // Start in skeleton mode.
+
+// Get pointer before moving
+ssd_mesh_node_ = ssd_node.get();
+
+// Add it as a child of THIS SkeletonNode, NOT a joint.
+this->AddChild(std::move(ssd_node));
+  //temporarry dummy normals
+  ssd_vertex_obj_->UpdateNormals(make_unique<NormalArray>(std::vector<glm::vec3>(ssd_vertex_obj_->GetPositions().size(), glm::vec3(0,1,0))));
+
+  // auto ssd_node_root = joint_nodes_ptrs_[0]->GetChild(joint_nodes_ptrs_[0]->GetChildrenCount() - 1);
+  // ssd_node_root.CreateComponent<ShadingComponent>(shader_);
+  // ssd_node_root.CreateComponent<RenderingComponent>(ssd_vertex_obj_);
+  
+  // Start with SSD hidden (skeleton mode is default)
+  // ssd_mesh_node_->SetActive(false);
+  
+
+}
 
 
 void SkeletonNode::Update(double delta_time) {
@@ -170,6 +227,89 @@ void SkeletonNode::OnJointChanged() {
     cylinder_ptr->GetTransform().SetScale(glm::vec3(1.0f, 10 * glm::length(parent_joint_pos), 1.0f));
     cylinder_ptr->GetTransform().SetRotation(axis, angle);
   }
+
+// SSD mesh update positions
+
+// auto positions = bind_pose_positions_; // start from bind pose
+
+// for (std::size_t v = 0; v < positions.size(); v++) {
+//     glm::vec4 new_pos(0.0f);
+//     for (std::size_t j = 0; j < joint_nodes_ptrs_.size(); j++) {
+//         float weight = weights_per_vertex_[v][j];
+//         if (weight <= 0.0f) continue;
+
+//         auto joint_ptr = joint_nodes_ptrs_[j];
+//         glm::mat4 Mj = joint_ptr->GetTransform().GetLocalToWorldMatrix();
+//         glm::mat4 BjInv = inverse_bind_matrices_[j];
+
+//         new_pos += weight * (Mj * BjInv * glm::vec4(bind_pose_positions_[v], 1.0f));
+//     }
+//     positions[v] = glm::vec3(new_pos);
+// }
+
+// ssd_vertex_obj_->UpdatePositions(make_unique<PositionArray>(positions));
+
+auto positions = bind_pose_positions_; // Good, start from original mesh
+
+for (std::size_t v = 0; v < positions.size(); v++) {
+    glm::vec4 new_pos(0.0f);
+    float total_weight = 0.0f;
+    for (std::size_t j = 0; j < joint_nodes_ptrs_.size(); j++) {
+        float weight = weights_per_vertex_[v][j];
+        total_weight += weight;
+        if (weight <= 0.001f) continue; // Use a small epsilon
+
+        // Get the joint's CURRENT world matrix
+        glm::mat4 Mj = joint_nodes_ptrs_[j]->GetTransform().GetLocalToWorldMatrix();
+
+        // Get the INVERSE BIND matrix from our clean, decoupled array
+        glm::mat4 BjInv = inverse_bind_matrices_[j];
+
+        // Apply the standard skinning formula
+        glm::vec4 initial_pos = glm::vec4(bind_pose_positions_[v], 1.0f);
+        new_pos += weight * (Mj * BjInv * initial_pos);
+    }
+
+    if (total_weight > 0.0f) {
+        positions[v] = glm::vec3(new_pos / total_weight);
+    } else {
+        // This is a truly unweighted vertex. Don't leave it at the origin.
+        // Place it back at its original bind pose position to prevent spikes.
+        positions[v] = bind_pose_positions_[v];
+    }
+
+    positions[v] = glm::vec3(new_pos);
+}
+
+ssd_vertex_obj_->UpdatePositions(make_unique<PositionArray>(positions));
+
+
+// SSD update normals
+// Very basic normal recalculation by averaging face normals
+
+// // Get deformed vertex positions from SSD
+std::vector<glm::vec3> deformed_positions = positions; // copy for modification
+
+std::vector<glm::vec3> normals(deformed_positions.size(), glm::vec3(0.0f));
+auto& indices = ssd_vertex_obj_->GetIndices();
+
+for (size_t i = 0; i < indices.size(); i += 3) {
+    auto i0 = indices[i], i1 = indices[i+1], i2 = indices[i+2];
+    glm::vec3 v0 = deformed_positions[i0];
+    glm::vec3 v1 = deformed_positions[i1];
+    glm::vec3 v2 = deformed_positions[i2];
+
+    glm::vec3 tri_normal = glm::cross(v1 - v0, v2 - v0);
+    normals[i0] += tri_normal;
+    normals[i1] += tri_normal;
+    normals[i2] += tri_normal;
+}
+
+for (auto& n : normals) n = glm::normalize(n);
+
+ssd_vertex_obj_->UpdateNormals(make_unique<NormalArray>(normals));
+
+
   std::cout << "Updated " << linked_angles_.size() << " joints." << std::endl;
 }
 
@@ -239,14 +379,45 @@ void SkeletonNode::LoadSkeletonFile(const std::string& path) {
 }
 
 void SkeletonNode::LoadMeshFile(const std::string& filename) {
-  std::shared_ptr<VertexObject> vtx_obj =
-      MeshLoader::Import(filename).vertex_obj;
+  ssd_vertex_obj_ = std::move(MeshLoader::Import(filename).vertex_obj);
   // TODO: store the bind pose mesh in your preferred way.
-
+  std::cout << "Loading mesh file: " << filename << std::endl;
+  bind_pose_positions_ = ssd_vertex_obj_->GetPositions();  // store bind pose
+  std::cout << "Loaded mesh with " << bind_pose_positions_.size() << " vertices." << std::endl;
 }
 
 void SkeletonNode::LoadAttachmentWeights(const std::string& path) {
   // TODO: load attachment weights.
+  std::cout << "Loading attachment weights from: " << path << std::endl;
+
+  std::ifstream file(path);
+  if (!file.is_open()) {
+      std::cerr << "Error: Could not open file " << path << std::endl;
+      return;
+  }
+  std::string line;
+    // Store weights for each vertex
+  // Read file line by line
+  while (std::getline(file, line)) {
+      std::istringstream iss(line);
+      std::vector<float> vertex_weights;
+      vertex_weights.push_back(0.0f); // Initialize weights for all joints to 0.0f
+      float weight;
+      // Read weights for the current vertex
+      while (iss >> weight) {
+          vertex_weights.push_back(weight);
+      }    
+      weights_per_vertex_.push_back(vertex_weights);
+  }
+  //print out the weights for debugging
+  // for (std::size_t i = 0; i < weights_per_vertex_.size(); ++i) {
+  //     std::cout << "Vertex " << i << ": ";
+  //     for (float w : weights_per_vertex_[i]) {
+  //         std::cout << w << " ";
+  //     }
+  //     std::cout << std::endl;
+  // }
+
 }
 
 void SkeletonNode::LoadAllFiles(const std::string& prefix) {

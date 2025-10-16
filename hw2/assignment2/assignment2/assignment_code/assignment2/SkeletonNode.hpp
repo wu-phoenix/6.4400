@@ -5,7 +5,7 @@
 #include "gloo/VertexObject.hpp"
 #include "gloo/shaders/ShaderProgram.hpp"
 #include "gloo/shaders/PhongShader.hpp"
-
+#include "gloo/MeshData.hpp"
 #include <string>
 #include <vector>
 
@@ -33,13 +33,20 @@ class SkeletonNode : public SceneNode {
   std::shared_ptr<PhongShader> shader_;
   std::shared_ptr<VertexObject> sphere_mesh_;
   std::shared_ptr<VertexObject> cylinder_mesh_;
+  // MeshData bind_pose_mesh_;
   std::vector<SceneNode*> joint_nodes_ptrs_;  
   std::vector<SceneNode*> sphere_nodes_ptrs_;
   std::vector<SceneNode*> cylinder_nodes_ptrs_;
+  std::vector<SceneNode*> ssd_nodes_ptrs_;
+  std::vector<std::vector<float>> weights_per_vertex_;
+  SceneNode* ssd_mesh_node_;
+  std::shared_ptr<VertexObject> ssd_vertex_obj_;
+  std::vector<glm::vec3> bind_pose_positions_;
 
   DrawMode draw_mode_;
   // Euler angles of the UI sliders.
   std::vector<EulerAngle*> linked_angles_;
+  std::vector<glm::mat4> inverse_bind_matrices_;
 };
 }  // namespace GLOO
 

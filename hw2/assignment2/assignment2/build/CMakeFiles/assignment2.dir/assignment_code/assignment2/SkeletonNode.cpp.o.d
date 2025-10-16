@@ -394,13 +394,13 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/PhongShader.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Material.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/InputManager.hpp \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/external.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshLoader.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/parsers/ObjParser.hpp \
- /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp \
- /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Material.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp \
  /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \

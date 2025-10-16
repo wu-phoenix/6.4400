@@ -441,14 +441,14 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: ../as
   ../gloo/Transform.hpp \
   ../gloo/shaders/PhongShader.hpp \
   ../gloo/shaders/ShaderProgram.hpp \
+  ../gloo/MeshData.hpp \
+  ../gloo/Material.hpp \
   ../gloo/InputManager.hpp \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/bits/std_function.h \
   ../gloo/external.hpp \
   ../gloo/MeshLoader.hpp \
   ../gloo/parsers/ObjParser.hpp \
-  ../gloo/MeshData.hpp \
-  ../gloo/Material.hpp \
   ../gloo/MeshData.hpp \
   /usr/include/c++/11/fstream \
   /usr/include/c++/11/bits/codecvt.h \
@@ -911,6 +911,8 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: 
   ../gloo/Transform.hpp \
   ../gloo/shaders/PhongShader.hpp \
   ../gloo/shaders/ShaderProgram.hpp \
+  ../gloo/MeshData.hpp \
+  ../gloo/Material.hpp \
   ../gloo/cameras/ArcBallCameraNode.hpp \
   ../gloo/lights/AmbientLight.hpp \
   ../gloo/lights/LightBase.hpp \
@@ -1372,7 +1374,9 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: ../assignment
   ../gloo/gl_wrapper/IBindable.hpp \
   ../gloo/Transform.hpp \
   ../gloo/shaders/PhongShader.hpp \
-  ../gloo/shaders/ShaderProgram.hpp
+  ../gloo/shaders/ShaderProgram.hpp \
+  ../gloo/MeshData.hpp \
+  ../gloo/Material.hpp
 
 CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o: ../assignment_code/common/helpers.cpp \
   /usr/include/stdc-predef.h \

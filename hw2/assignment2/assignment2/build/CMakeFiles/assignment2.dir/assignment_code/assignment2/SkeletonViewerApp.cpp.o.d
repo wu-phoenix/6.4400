@@ -404,6 +404,8 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: 
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/PhongShader.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Material.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/cameras/ArcBallCameraNode.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/lights/AmbientLight.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/lights/LightBase.hpp \

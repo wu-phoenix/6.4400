@@ -404,4 +404,6 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/gl_wrapper/IBindable.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/PhongShader.hpp \
- /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/shaders/ShaderProgram.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/MeshData.hpp \
+ /home/phoenix/Documents/6.4400/hw2/assignment2/assignment2/gloo/Material.hpp

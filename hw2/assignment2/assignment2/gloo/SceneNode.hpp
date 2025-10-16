@@ -83,6 +83,12 @@ class SceneNode {
     return transform_;
   }
 
+  void SetTransform(const Transform& transform) {
+    transform_.SetPosition(transform.GetPosition());
+    transform_.SetRotation(transform.GetRotation());  
+    transform_.SetScale(transform.GetScale());
+  }
+
   bool IsActive() const {
     return active_;
   }
