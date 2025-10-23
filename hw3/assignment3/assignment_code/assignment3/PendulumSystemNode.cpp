@@ -11,7 +11,7 @@
 #include "gloo/components/MaterialComponent.hpp"
 #include "PendulumSystemNode.hpp"
 #include "gloo/shaders/PhongShader.hpp"
-
+#include "gloo/InputManager.hpp"
 
 namespace GLOO {
 
@@ -39,7 +39,7 @@ PendulumSystemNode::PendulumSystemNode(
     particle_state_.positions.push_back(glm::vec3(0.0f, 0.0f, -3.0f));
     particle_state_.velocities.push_back(glm::vec3(-1.0f));
 
-
+    original_state_ = std::make_shared<ParticleState>(particle_state_);
 
     // set parameters of the pendulum system like gravity
     particle_system_ = PendulumSystem();
@@ -65,6 +65,17 @@ PendulumSystemNode::PendulumSystemNode(
 
 void PendulumSystemNode::Update(double dt) 
      {
+
+        static bool prev_released = true;
+        if (InputManager::GetInstance().IsKeyPressed('R')) {
+            if (prev_released) {
+            particle_state_ = *original_state_;
+            }
+            prev_released = false;
+        } else if (InputManager::GetInstance().IsKeyReleased('R')) {
+            prev_released = true;
+        }
+
     // std::cout << "updating pendulum system node" << std::endl;
         particle_state_ = integrator_->Integrate(particle_system_, particle_state_, time_, dt_);
         time_ += dt_;

@@ -46,6 +46,7 @@ class PendulumSystemNode : public SceneNode {
      std::vector<SceneNode*> particles_;
      float time_;
      std::shared_ptr<VertexObject> sphere_mesh_;
+     std::shared_ptr<ParticleState> original_state_;
 };
 
 }  // namespace GLOO

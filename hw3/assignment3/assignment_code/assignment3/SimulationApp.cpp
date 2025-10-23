@@ -49,7 +49,7 @@ void SimulationApp::SetupScene() {
   root.AddChild(make_unique<AxisNode>('A'));
 
   auto ambient_light = std::make_shared<AmbientLight>();
-  ambient_light->SetAmbientColor(glm::vec3(0.2f));
+  ambient_light->SetAmbientColor(glm::vec3(0.5f));
   root.CreateComponent<LightComponent>(ambient_light);
 
   auto point_light = std::make_shared<PointLight>();
@@ -88,6 +88,7 @@ void SimulationApp::SetupScene() {
 
   auto cloth_integrator = IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type_);
   auto clothsys_node_ptr = make_unique<ClothSystemNode>(std::move(cloth_integrator), integration_step_, 10, 10);
+  clothsys_node_ptr->GetTransform().SetPosition(glm::vec3(0.0f, 5.0f, -5.0f));
   root.AddChild(std::move(clothsys_node_ptr));
 
 }

@@ -12,6 +12,7 @@
 #include "gloo/components/RenderingComponent.hpp"
 #include "gloo/components/MaterialComponent.hpp"
 #include "gloo/shaders/PhongShader.hpp"
+#include "gloo/InputManager.hpp"
 
 
 namespace GLOO {
@@ -30,6 +31,10 @@ class ClothSystemNode : public PendulumSystemNode {
     int GetIndex(int row, int col, int width) {
       return row * width + col;
     }
+    std::shared_ptr<VertexObject> cloth_mesh_;
+    int width_;
+   int height_;   
+   std::shared_ptr<ParticleState> original_state_;
 };
 
 }  // namespace GLOO

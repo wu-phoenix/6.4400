@@ -11,7 +11,7 @@
 #include "gloo/components/MaterialComponent.hpp"
 #include "SimpleSystemNode.hpp"
 #include "gloo/shaders/PhongShader.hpp"
-
+#include "gloo/InputManager.hpp"
 
 namespace GLOO {
 
@@ -35,6 +35,8 @@ SimpleSystemNode::SimpleSystemNode(
     particle_state_.velocities.push_back(glm::vec3(0.0f));
     particles_.resize(particle_state_.positions.size());
     
+    original_state_ =  std::make_shared<ParticleState>(particle_state_);
+
     // for each particle state, create a SceneNode that holds the mesh/visualization.
     // We'll constantly update this with the particle state.
     for (size_t i = 0; i < particle_state_.positions.size(); ++i) {
@@ -50,6 +52,17 @@ SimpleSystemNode::SimpleSystemNode(
 
 void SimpleSystemNode::Update(double dt) 
      {
+
+        static bool prev_released = true;
+        if (InputManager::GetInstance().IsKeyPressed('R')) {
+            if (prev_released) {
+            particle_state_ = *original_state_;
+            }
+            prev_released = false;
+        } else if (InputManager::GetInstance().IsKeyReleased('R')) {
+            prev_released = true;
+        }
+
     // std::cout << "updating simple system node" << std::endl;
         particle_state_ = integrator_->Integrate(particle_system_, particle_state_, time_, dt_);
         time_ += dt_;

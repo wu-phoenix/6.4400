@@ -12,6 +12,8 @@
 #include "PendulumSystemNode.hpp"
 #include "gloo/shaders/PhongShader.hpp"
 #include "ClothSystemNode.hpp"
+#include "gloo/InputManager.hpp"
+
 
 namespace GLOO {
 
@@ -24,6 +26,9 @@ ClothSystemNode::ClothSystemNode(
     
     // Base class constructor already initialized integrator_, dt_, time_,
     // shader_, and sphere_mesh_. We configure cloth-specific data below.
+    width_ = width;
+    height_ = height;
+
     sphere_mesh_ = PrimitiveFactory::CreateSphere(0.1f, 10, 10);
     shader_ = std::make_shared<PhongShader>();  
     particle_state_ = ParticleState();
@@ -74,6 +79,50 @@ ClothSystemNode::ClothSystemNode(
     }
 
 
+    // create wiremesh of cloth
+    cloth_mesh_ = std::make_shared<VertexObject>();
+    auto positions = make_unique<PositionArray>();
+    auto indices = make_unique<IndexArray>();
+    auto normals = make_unique<NormalArray>();
+    for (size_t i = 0; i < particle_state_.positions.size(); ++i) {
+        positions->push_back(particle_state_.positions[i]);        
+    }
+    // add triangles
+    for (int i = 0; i < height-1; ++i) {
+        for (int j = 0; j < width - 1; ++j) {
+            int tl = GetIndex(i, j, width);
+            int tr = GetIndex(i, j + 1, width);
+            int bl = GetIndex(i + 1, j, width);
+            int br = GetIndex(i + 1, j + 1, width);
+
+            // add both triangles
+
+            indices->push_back(tl);
+            indices->push_back(bl);
+            indices->push_back(tr);
+
+            indices->push_back(tr);
+            indices->push_back(bl);
+            indices->push_back(br); 
+            
+            // add normals for triangles
+            normals->push_back(glm::vec3(0.0f, 0.0f, 1.0f));
+            normals->push_back(glm::vec3(0.0f, 0.0f, 1.0f));
+        }
+    }
+
+
+
+    original_state_ = std::make_shared<ParticleState>(particle_state_);
+
+
+    cloth_mesh_->UpdatePositions(std::move(positions));
+    cloth_mesh_->UpdateIndices(std::move(indices));
+
+    this->CreateComponent<RenderingComponent>(cloth_mesh_);
+    this->CreateComponent<ShadingComponent>(shader_);
+
+
     // for each particle state, create a SceneNode that holds the mesh/visualization.
     // We'll constantly update this with the particle state.
     for (size_t i = 0; i < particle_state_.positions.size(); ++i) {
@@ -88,13 +137,51 @@ ClothSystemNode::ClothSystemNode(
 
 void ClothSystemNode::Update(double dt) 
      {
+
+        static bool prev_released = true;
+        if (InputManager::GetInstance().IsKeyPressed('R')) {
+            if (prev_released) {
+            particle_state_ = *original_state_;
+            }
+            prev_released = false;
+        } else if (InputManager::GetInstance().IsKeyReleased('R')) {
+            prev_released = true;
+        }
+
+
     // std::cout << "updating pendulum system node" << std::endl;
         particle_state_ = integrator_->Integrate(particle_system_, particle_state_, time_, dt_);
         time_ += dt_;
         // update particle nodes to visualize
+        cloth_mesh_->UpdatePositions(make_unique<PositionArray>(particle_state_.positions));
         for (size_t i = 0; i < this->GetChildrenCount(); ++i) {
             this->GetChild(i).GetTransform().SetPosition(particle_state_.positions[i]);
         }
+
+        // update normals for cloth mesh
+        auto normals = make_unique<NormalArray>();
+        for (int i = 0; i < height_-1; ++i) {
+            for (int j = 0; j < width_ - 1; ++j) {
+                int tl = GetIndex(i, j, width_);
+                int tr = GetIndex(i, j + 1, width_);
+                int bl = GetIndex(i + 1, j, width_);
+                int br = GetIndex(i + 1, j + 1, width_);
+                
+                // add normals for triangles
+                normals->push_back(glm::cross(
+                    particle_state_.positions[bl] - particle_state_.positions[tl],
+                    particle_state_.positions[tr] - particle_state_.positions[tl]
+                ));
+                normals->push_back(glm::cross(
+                    particle_state_.positions[br] - particle_state_.positions[tr],
+                    particle_state_.positions[bl] - particle_state_.positions[tr]
+                ));
+            }
+        }
+        cloth_mesh_->UpdateNormals(std::move(normals));
     }
+
+   
+
 
 }  // namespace GLOO

@@ -453,7 +453,11 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothSystemNode.cpp.o: ..
   ../assignment3/PendulumSystem.hpp \
   ../../gloo/shaders/PhongShader.hpp \
   ../../gloo/shaders/ShaderProgram.hpp \
-  ../assignment3/ClothSystemNode.hpp
+  ../assignment3/ClothSystemNode.hpp \
+  ../../gloo/InputManager.hpp \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
+  ../../gloo/external.hpp
 
 CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumSystemNode.cpp.o: ../assignment3/PendulumSystemNode.cpp \
   /usr/include/stdc-predef.h \
@@ -906,7 +910,11 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumSystemNode.cpp.o:
   ../assignment3/PendulumSystemNode.hpp \
   ../assignment3/PendulumSystem.hpp \
   ../../gloo/shaders/PhongShader.hpp \
-  ../../gloo/shaders/ShaderProgram.hpp
+  ../../gloo/shaders/ShaderProgram.hpp \
+  ../../gloo/InputManager.hpp \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
+  ../../gloo/external.hpp
 
 CMakeFiles/assignment3.dir/assignment_code/assignment3/SimpleSystemNode.cpp.o: ../assignment3/SimpleSystemNode.cpp \
   /usr/include/stdc-predef.h \
@@ -1358,7 +1366,11 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimpleSystemNode.cpp.o: .
   ../../gloo/Material.hpp \
   ../assignment3/SimpleSystemNode.hpp \
   ../../gloo/shaders/PhongShader.hpp \
-  ../../gloo/shaders/ShaderProgram.hpp
+  ../../gloo/shaders/ShaderProgram.hpp \
+  ../../gloo/InputManager.hpp \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
+  ../../gloo/external.hpp
 
 CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: ../assignment3/SimulationApp.cpp \
   /usr/include/stdc-predef.h \
@@ -1856,7 +1868,10 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: ../a
   ../assignment3/ForwardRK4Integrator.hpp \
   ../assignment3/PendulumSystem.hpp \
   ../assignment3/PendulumSystemNode.hpp \
-  ../assignment3/ClothSystemNode.hpp
+  ../assignment3/ClothSystemNode.hpp \
+  ../../gloo/InputManager.hpp \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h
 
 CMakeFiles/assignment3.dir/assignment_code/assignment3/main.cpp.o: ../assignment3/main.cpp \
   /usr/include/stdc-predef.h \
@@ -13576,6 +13591,8 @@ CMakeFiles/assignment3.dir/gloo/utils.cpp.o: ../../gloo/utils.cpp \
 
 /usr/include/c++/11/bits/algorithmfwd.h:
 
+../../gloo/InputManager.hpp:
+
 ../assignment3/PendulumSystemNode.cpp:
 
 ../../external/src/glm-0.9.9.8/glm/detail/type_mat2x4.inl:
@@ -13655,8 +13672,6 @@ CMakeFiles/assignment3.dir/gloo/utils.cpp.o: ../../gloo/utils.cpp \
 ../../external/src/imgui/imgui_widgets.cpp:
 
 ../../gloo/Application.cpp:
-
-../../gloo/InputManager.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
 
