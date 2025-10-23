@@ -64,7 +64,12 @@ class PendulumSystem : public ParticleSystemBase {
     void SetFixedIndices(const std::vector<int>& fixed_indices) { fixed_indices_ = fixed_indices; }
     void SetMasses(const std::vector<float>& masses) { masses_ = masses; }
     void SetSprings(const std::vector<glm::vec4>& springs) { springs_ = springs; }
-
+    void AddSpring(int index1, int index2, float rest_length, float stiffness) {
+        springs_.push_back(glm::vec4(index1, index2, rest_length, stiffness));
+    }
+    void AddMass(float mass) {
+        masses_.push_back(mass);
+    }
     private:
     float gravity_ = 9.81f;
     float drag_coefficient_ = 0.1f;

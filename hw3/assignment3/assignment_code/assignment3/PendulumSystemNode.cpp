@@ -17,10 +17,10 @@ namespace GLOO {
 
 PendulumSystemNode::PendulumSystemNode(
         std::unique_ptr<IntegratorBase<PendulumSystem, ParticleState>> integrator,
-        float dt) {
+        float dt) : integrator_(std::move(integrator)) {
     // this will be a shared mesh for all particles (aka the one particle for this system)
     
-    integrator_ = std::move(integrator);
+    // integrator_ = std::move(integrator);
     dt_ = dt;
     time_ = 0.0f;
     sphere_mesh_ = PrimitiveFactory::CreateSphere(0.1f, 10, 10);

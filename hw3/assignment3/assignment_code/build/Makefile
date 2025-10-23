@@ -200,6 +200,30 @@ glfw/fast:
 	$(MAKE) $(MAKESILENT) -f external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/build.make external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
+assignment_code/assignment3/ClothSystemNode.o: assignment_code/assignment3/ClothSystemNode.cpp.o
+.PHONY : assignment_code/assignment3/ClothSystemNode.o
+
+# target to build an object file
+assignment_code/assignment3/ClothSystemNode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothSystemNode.cpp.o
+.PHONY : assignment_code/assignment3/ClothSystemNode.cpp.o
+
+assignment_code/assignment3/ClothSystemNode.i: assignment_code/assignment3/ClothSystemNode.cpp.i
+.PHONY : assignment_code/assignment3/ClothSystemNode.i
+
+# target to preprocess a source file
+assignment_code/assignment3/ClothSystemNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothSystemNode.cpp.i
+.PHONY : assignment_code/assignment3/ClothSystemNode.cpp.i
+
+assignment_code/assignment3/ClothSystemNode.s: assignment_code/assignment3/ClothSystemNode.cpp.s
+.PHONY : assignment_code/assignment3/ClothSystemNode.s
+
+# target to generate assembly for a file
+assignment_code/assignment3/ClothSystemNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothSystemNode.cpp.s
+.PHONY : assignment_code/assignment3/ClothSystemNode.cpp.s
+
 assignment_code/assignment3/PendulumSystemNode.o: assignment_code/assignment3/PendulumSystemNode.cpp.o
 .PHONY : assignment_code/assignment3/PendulumSystemNode.o
 
@@ -1103,6 +1127,9 @@ help:
 	@echo "... uninstall"
 	@echo "... assignment3"
 	@echo "... glfw"
+	@echo "... assignment_code/assignment3/ClothSystemNode.o"
+	@echo "... assignment_code/assignment3/ClothSystemNode.i"
+	@echo "... assignment_code/assignment3/ClothSystemNode.s"
 	@echo "... assignment_code/assignment3/PendulumSystemNode.o"
 	@echo "... assignment_code/assignment3/PendulumSystemNode.i"
 	@echo "... assignment_code/assignment3/PendulumSystemNode.s"

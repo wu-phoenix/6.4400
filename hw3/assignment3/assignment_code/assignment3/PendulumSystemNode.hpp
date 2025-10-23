@@ -22,17 +22,30 @@ class PendulumSystemNode : public SceneNode {
                                      float dt);
 
     void Update(double dt) override;
+    void AddParticleNode(const glm::vec3& position, const glm::vec3& velocity){
+        particle_state_.positions.push_back(position);
+        particle_state_.velocities.push_back(velocity);
+        auto particle_node = make_unique<SceneNode>();
+        particle_node->GetTransform().SetPosition(position);
+        particle_node->CreateComponent<RenderingComponent>(sphere_mesh_);
+        particle_node->CreateComponent<ShadingComponent>(shader_);
+        this->AddChild(std::move(particle_node));
+    };
+    void AddSpring(int index1, int index2, float rest_length, float stiffness){
+        particle_system_.AddSpring(index1, index2, rest_length, stiffness);
+        
+    };
 
     
- private:
-    PendulumSystem particle_system_;
-    ParticleState particle_state_;
-    std::shared_ptr<PhongShader> shader_;
-    std::unique_ptr<IntegratorBase<PendulumSystem, ParticleState>> integrator_;
-    float dt_;
-    std::vector<SceneNode*> particles_;
-    float time_;
-    std::shared_ptr<VertexObject> sphere_mesh_;
+ protected:
+     PendulumSystem particle_system_;
+     ParticleState particle_state_;
+     std::shared_ptr<PhongShader> shader_;
+     std::unique_ptr<IntegratorBase<PendulumSystem, ParticleState>> integrator_;
+     float dt_;
+     std::vector<SceneNode*> particles_;
+     float time_;
+     std::shared_ptr<VertexObject> sphere_mesh_;
 };
 
 }  // namespace GLOO

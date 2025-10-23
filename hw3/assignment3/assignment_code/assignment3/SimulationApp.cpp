@@ -19,6 +19,7 @@
 #include "IntegratorFactory.hpp"
 #include "PendulumSystem.hpp"
 #include "PendulumSystemNode.hpp"
+#include "ClothSystemNode.hpp"
 
 
 namespace GLOO {
@@ -60,9 +61,18 @@ void SimulationApp::SetupScene() {
   point_light_node->GetTransform().SetPosition(glm::vec3(0.0f, 2.0f, 4.f));
   root.AddChild(std::move(point_light_node)); 
 
+  auto point_light2 = std::make_shared<PointLight>();
+  point_light2->SetDiffuseColor(glm::vec3(0.8f, 0.8f, 0.8f));
+  point_light2->SetSpecularColor(glm::vec3(1.0f, 1.0f, 1.0f));
+  point_light2->SetAttenuation(glm::vec3(1.0f, 0.09f, 0.032f));
+  auto point_light_node2 = make_unique<SceneNode>();
+  point_light_node2->CreateComponent<LightComponent>(point_light2);
+  point_light_node2->GetTransform().SetPosition(glm::vec3(3.0f, 5.0f, 3.0f));
+  root.AddChild(std::move(point_light_node2));  
+
   // simple state 1 particle
   ParticleState simple_state;
-  simple_state.positions.push_back(glm::vec3(1.0f, 0.0f, 0.0f));
+  simple_state.positions.push_back(glm::vec3(5.0f, 0.0f, 5.0f));
   simple_state.velocities.push_back(glm::vec3(0.0f));
 
   // Create an integrator and pass ownership to the system node.
@@ -75,6 +85,10 @@ void SimulationApp::SetupScene() {
   auto pendulum_integrator = IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type_);
   auto pendulumsys_node_ptr = make_unique<PendulumSystemNode>(std::move(pendulum_integrator), integration_step_);
   root.AddChild(std::move(pendulumsys_node_ptr));
+
+  auto cloth_integrator = IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type_);
+  auto clothsys_node_ptr = make_unique<ClothSystemNode>(std::move(cloth_integrator), integration_step_, 10, 10);
+  root.AddChild(std::move(clothsys_node_ptr));
 
 }
 }  // namespace GLOO
