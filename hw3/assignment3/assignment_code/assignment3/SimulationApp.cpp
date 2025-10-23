@@ -17,6 +17,9 @@
 #include "SimpleSystemNode.hpp"
 #include "SimpleSystem.hpp"
 #include "IntegratorFactory.hpp"
+#include "PendulumSystem.hpp"
+#include "PendulumSystemNode.hpp"
+
 
 namespace GLOO {
 SimulationApp::SimulationApp(const std::string& app_name,
@@ -66,5 +69,12 @@ void SimulationApp::SetupScene() {
   auto integrator = IntegratorFactory::CreateIntegrator<SimpleSystem, ParticleState>(integrator_type_);
   auto simplesys_node = make_unique<SimpleSystemNode>(std::move(integrator), integration_step_);
   root.AddChild(std::move(simplesys_node));
+
+  // pendulum system with 2 particles
+
+  auto pendulum_integrator = IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type_);
+  auto pendulumsys_node_ptr = make_unique<PendulumSystemNode>(std::move(pendulum_integrator), integration_step_);
+  root.AddChild(std::move(pendulumsys_node_ptr));
+
 }
 }  // namespace GLOO

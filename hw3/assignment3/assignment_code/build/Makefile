@@ -200,6 +200,30 @@ glfw/fast:
 	$(MAKE) $(MAKESILENT) -f external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/build.make external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
+assignment_code/assignment3/PendulumSystemNode.o: assignment_code/assignment3/PendulumSystemNode.cpp.o
+.PHONY : assignment_code/assignment3/PendulumSystemNode.o
+
+# target to build an object file
+assignment_code/assignment3/PendulumSystemNode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumSystemNode.cpp.o
+.PHONY : assignment_code/assignment3/PendulumSystemNode.cpp.o
+
+assignment_code/assignment3/PendulumSystemNode.i: assignment_code/assignment3/PendulumSystemNode.cpp.i
+.PHONY : assignment_code/assignment3/PendulumSystemNode.i
+
+# target to preprocess a source file
+assignment_code/assignment3/PendulumSystemNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumSystemNode.cpp.i
+.PHONY : assignment_code/assignment3/PendulumSystemNode.cpp.i
+
+assignment_code/assignment3/PendulumSystemNode.s: assignment_code/assignment3/PendulumSystemNode.cpp.s
+.PHONY : assignment_code/assignment3/PendulumSystemNode.s
+
+# target to generate assembly for a file
+assignment_code/assignment3/PendulumSystemNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumSystemNode.cpp.s
+.PHONY : assignment_code/assignment3/PendulumSystemNode.cpp.s
+
 assignment_code/assignment3/SimpleSystemNode.o: assignment_code/assignment3/SimpleSystemNode.cpp.o
 .PHONY : assignment_code/assignment3/SimpleSystemNode.o
 
@@ -1079,6 +1103,9 @@ help:
 	@echo "... uninstall"
 	@echo "... assignment3"
 	@echo "... glfw"
+	@echo "... assignment_code/assignment3/PendulumSystemNode.o"
+	@echo "... assignment_code/assignment3/PendulumSystemNode.i"
+	@echo "... assignment_code/assignment3/PendulumSystemNode.s"
 	@echo "... assignment_code/assignment3/SimpleSystemNode.o"
 	@echo "... assignment_code/assignment3/SimpleSystemNode.i"
 	@echo "... assignment_code/assignment3/SimpleSystemNode.s"

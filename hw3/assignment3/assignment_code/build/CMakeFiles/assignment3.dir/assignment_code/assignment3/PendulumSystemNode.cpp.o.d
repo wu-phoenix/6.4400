@@ -1,9 +1,8 @@
-CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/SimulationApp.cpp \
+CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumSystemNode.cpp.o: \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/PendulumSystemNode.cpp \
  /usr/include/stdc-predef.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/SimulationApp.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/Application.hpp \
- /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/SceneNode.hpp \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -37,6 +36,13 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/ext/alloc_traits.h \
  /usr/include/c++/11/bits/alloc_traits.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/initializer_list \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/functional_hash.h \
+ /usr/include/c++/11/bits/hash_bytes.h \
+ /usr/include/c++/11/bits/range_access.h \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -50,14 +56,10 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/c++/11/bits/uses_allocator.h \
  /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/utility \
- /usr/include/c++/11/bits/stl_relops.h \
- /usr/include/c++/11/initializer_list /usr/include/c++/11/tuple \
- /usr/include/c++/11/array /usr/include/c++/11/bits/range_access.h \
- /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/invoke.h \
  /usr/include/c++/11/bits/stl_function.h \
  /usr/include/c++/11/backward/binders.h \
- /usr/include/c++/11/bits/functional_hash.h \
- /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/shared_ptr.h /usr/include/c++/11/iosfwd \
  /usr/include/c++/11/bits/stringfwd.h /usr/include/c++/11/bits/postypes.h \
  /usr/include/c++/11/cwchar /usr/include/wchar.h \
@@ -114,13 +116,21 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /usr/include/c++/11/bits/shared_ptr_atomic.h \
  /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /usr/include/c++/11/backward/auto_ptr.h /usr/include/c++/11/string \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/iostream \
+ /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/char_traits.h /usr/include/c++/11/cstdint \
  /usr/include/c++/11/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h \
  /usr/include/c++/11/clocale /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/11/cctype \
- /usr/include/ctype.h /usr/include/c++/11/bits/ostream_insert.h \
+ /usr/include/ctype.h /usr/include/c++/11/bits/ios_base.h \
+ /usr/include/c++/11/bits/locale_classes.h /usr/include/c++/11/string \
+ /usr/include/c++/11/bits/ostream_insert.h \
  /usr/include/c++/11/bits/cxxabi_forced.h \
  /usr/include/c++/11/bits/basic_string.h \
  /usr/include/c++/11/ext/string_conversions.h /usr/include/c++/11/cstdlib \
@@ -146,19 +156,47 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/external.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/imgui.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/imconfig.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h /usr/include/string.h \
- /usr/include/strings.h /usr/include/assert.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/examples/imgui_impl_glfw.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/examples/imgui_impl_opengl3.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glad/include/glad/glad.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glad/include/KHR/khrplatform.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glfw-3.3.2/include/GLFW/glfw3.h \
- /usr/include/GL/gl.h \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/glm.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/_fixes.hpp \
+ /usr/include/c++/11/bits/locale_classes.tcc \
+ /usr/include/c++/11/system_error \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
+ /usr/include/c++/11/stdexcept /usr/include/c++/11/streambuf \
+ /usr/include/c++/11/bits/streambuf.tcc \
+ /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+ /usr/include/c++/11/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+ /usr/include/c++/11/bits/locale_facets.tcc \
+ /usr/include/c++/11/bits/basic_ios.tcc \
+ /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/istream.tcc \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/vec3.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool3.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_vec3.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/qualifier.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/setup.hpp \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
+ /usr/include/c++/11/cstddef \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/simd/platform.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_vec3.inl \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/compute_vector_relational.hpp \
+ /usr/include/c++/11/limits \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool3_precision.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float3.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float3_precision.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_double3.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_double3_precision.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int3.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int3_sized.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/scalar_int_sized.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/setup.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint3.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint3_sized.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/scalar_uint_sized.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentBase.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentType.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/utils.hpp \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -169,9 +207,14 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glad/include/glad/glad.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glad/include/KHR/khrplatform.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentType.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/Transform.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/glm.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/_fixes.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/setup.hpp \
- /usr/include/c++/11/cassert /usr/include/c++/11/cstddef \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/simd/platform.h \
  /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -181,15 +224,12 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/11/cfloat \
- /usr/include/c++/11/limits \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/fwd.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/qualifier.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/setup.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/vec2.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool2.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_vec2.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_vec2.inl \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/compute_vector_relational.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool2_precision.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float2.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float2_precision.hpp \
@@ -197,24 +237,8 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_double2_precision.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int2.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int2_sized.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/scalar_int_sized.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/setup.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint2.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint2_sized.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/scalar_uint_sized.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/vec3.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool3.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_vec3.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_vec3.inl \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool3_precision.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float3.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float3_precision.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_double3.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_double3_precision.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int3.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int3_sized.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint3.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint3_sized.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/vec4.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool4.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_vec4.hpp \
@@ -313,40 +337,6 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/type_half.inl \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/integer.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/func_integer.inl \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/Scene.hpp \
- /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/SceneNode.hpp \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/iostream \
- /usr/include/c++/11/ostream /usr/include/c++/11/ios \
- /usr/include/c++/11/bits/ios_base.h \
- /usr/include/c++/11/bits/locale_classes.h \
- /usr/include/c++/11/bits/locale_classes.tcc \
- /usr/include/c++/11/system_error \
- /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
- /usr/include/c++/11/stdexcept /usr/include/c++/11/streambuf \
- /usr/include/c++/11/bits/streambuf.tcc \
- /usr/include/c++/11/bits/basic_ios.h \
- /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
- /usr/include/c++/11/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
- /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc \
- /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentBase.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentType.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/utils.hpp \
- /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentType.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtc/quaternion.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtc/constants.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/scalar_constants.hpp \
@@ -383,69 +373,36 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtc/epsilon.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/detail/setup.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtc/epsilon.inl \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/CameraComponent.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentBase.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/Renderer.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/LightComponent.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/lights/LightBase.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/RenderingComponent.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ForwardEulerIntegrator.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/IntegratorBase.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ParticleSystemBase.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ParticleState.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/SimpleSystem.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/VertexObject.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/gl_wrapper/VertexArray.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/gl_wrapper/IBindable.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/external.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/imgui.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/imconfig.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/examples/imgui_impl_glfw.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/imgui/examples/imgui_impl_opengl3.h \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glfw-3.3.2/include/GLFW/glfw3.h \
+ /usr/include/GL/gl.h \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/alias_types.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/gl_wrapper/VertexBuffer.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/gl_wrapper/BindableBuffer.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/gl_wrapper/BindGuard.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/IntegratorType.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtx/string_cast.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtc/type_precision.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtc/vec1.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool1.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_bool1_precision.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float1.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_float1_precision.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_double1.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_double1_precision.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int1.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_int1_sized.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint1.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/ext/vector_uint1_sized.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtc/type_precision.inl \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtx/dual_quaternion.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtx/dual_quaternion.inl \
- /home/phoenix/Documents/6.4400/hw3/assignment3/external/src/glm-0.9.9.8/glm/gtx/string_cast.inl \
- /usr/include/c++/11/cstdarg \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/shaders/PhongShader.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/debug/PrimitiveFactory.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ShadingComponent.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ComponentBase.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/shaders/ShaderProgram.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/gl_wrapper/IBindable.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/RenderingComponent.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/ShadingComponent.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/shaders/ShaderProgram.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/CameraComponent.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/LightComponent.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/components/MaterialComponent.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/Material.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/MeshLoader.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/parsers/ObjParser.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/MeshData.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/MeshData.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/lights/PointLight.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/lights/LightBase.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/lights/AmbientLight.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/cameras/ArcBallCameraNode.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/SceneNode.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/debug/AxisNode.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ParticleState.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/SimpleSystemNode.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ForwardEulerIntegrator.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/IntegratorBase.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ParticleSystemBase.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/SimpleSystem.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/debug/PrimitiveFactory.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/IntegratorFactory.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ForwardTrapezoidIntegrator.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/ForwardRK4Integrator.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/PendulumSystemNode.hpp \
  /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/PendulumSystem.hpp \
- /home/phoenix/Documents/6.4400/hw3/assignment3/assignment_code/assignment3/PendulumSystemNode.hpp
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/shaders/PhongShader.hpp \
+ /home/phoenix/Documents/6.4400/hw3/assignment3/gloo/shaders/ShaderProgram.hpp
