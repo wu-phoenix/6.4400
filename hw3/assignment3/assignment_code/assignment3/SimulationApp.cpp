@@ -13,7 +13,10 @@
 #include "gloo/lights/AmbientLight.hpp"
 #include "gloo/cameras/ArcBallCameraNode.hpp"
 #include "gloo/debug/AxisNode.hpp"
-
+#include "ParticleState.hpp"
+#include "SimpleSystemNode.hpp"
+#include "SimpleSystem.hpp"
+#include "IntegratorFactory.hpp"
 
 namespace GLOO {
 SimulationApp::SimulationApp(const std::string& app_name,
@@ -26,8 +29,10 @@ SimulationApp::SimulationApp(const std::string& app_name,
   // TODO: remove the following two lines and use integrator type and step to
   // create integrators; the lines below exist only to suppress compiler
   // warnings.
-  UNUSED(integrator_type_);
-  UNUSED(integration_step_);
+  // UNUSED(integrator_type_);
+  // UNUSED(integration_step_);
+  integrator_type_ = integrator_type;
+  integration_step_ = integration_step;
 }
 
 void SimulationApp::SetupScene() {
@@ -50,6 +55,16 @@ void SimulationApp::SetupScene() {
   auto point_light_node = make_unique<SceneNode>();
   point_light_node->CreateComponent<LightComponent>(point_light);
   point_light_node->GetTransform().SetPosition(glm::vec3(0.0f, 2.0f, 4.f));
-  root.AddChild(std::move(point_light_node));
+  root.AddChild(std::move(point_light_node)); 
+
+  // simple state 1 particle
+  ParticleState simple_state;
+  simple_state.positions.push_back(glm::vec3(1.0f, 0.0f, 0.0f));
+  simple_state.velocities.push_back(glm::vec3(0.0f));
+
+  // Create an integrator and pass ownership to the system node.
+  auto integrator = IntegratorFactory::CreateIntegrator<SimpleSystem, ParticleState>(integrator_type_);
+  auto simplesys_node = make_unique<SimpleSystemNode>(std::move(integrator), integration_step_);
+  root.AddChild(std::move(simplesys_node));
 }
 }  // namespace GLOO

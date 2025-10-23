@@ -169,6 +169,7 @@ this->AddChild(std::move(ssd_node));
 
 void SkeletonNode::Update(double delta_time) {
   // Prevent multiple toggle.
+  std::cout << "SkeletonNode::Update called." << std::endl;
   static bool prev_released = true;
   if (InputManager::GetInstance().IsKeyPressed('S')) {
     if (prev_released) {

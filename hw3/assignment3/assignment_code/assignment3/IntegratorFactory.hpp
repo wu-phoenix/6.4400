@@ -8,6 +8,11 @@
 #include "gloo/utils.hpp"
 
 #include "IntegratorType.hpp"
+#include "ForwardEulerIntegrator.hpp"
+#include "ForwardTrapezoidIntegrator.hpp"
+#include "ForwardRK4Integrator.hpp"
+
+
 
 namespace GLOO {
 class IntegratorFactory {
@@ -15,7 +20,16 @@ class IntegratorFactory {
   template <class TSystem, class TState>
   static std::unique_ptr<IntegratorBase<TSystem, TState>> CreateIntegrator(
       IntegratorType type) {
-    return nullptr;
+
+        if (type == IntegratorType::Euler) {
+          return make_unique<ForwardEulerIntegrator<TSystem, TState>>();
+        } else if (type == IntegratorType::Trapezoidal) {
+          return make_unique<ForwardTrapezoidIntegrator<TSystem, TState>>();
+        } else if (type == IntegratorType::RK4) {
+          return make_unique<ForwardRK4Integrator<TSystem, TState>>();
+        } else {
+          throw std::invalid_argument("Unknown integrator type");
+        }
   }
 };
 }  // namespace GLOO
