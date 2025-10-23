@@ -33,6 +33,7 @@ ClothSystemNode::ClothSystemNode(
     shader_ = std::make_shared<PhongShader>();  
     particle_state_ = ParticleState();
     particle_system_ = PendulumSystem();
+    particle_system_.SetDragCoefficient(0.6f);
     // Create a cloth grid of particles
     for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {
@@ -51,29 +52,29 @@ ClothSystemNode::ClothSystemNode(
             // structural springs
             if (j < width - 1) { // right neighbor
                 int right_index = GetIndex(i, j + 1, width);
-                particle_system_.AddSpring(index, right_index, 0.5f, 50.0f);
+                particle_system_.AddSpring(index, right_index, 0.5f, 100.0f);
             }
             if (i < height - 1) { // bottom neighbor
                 int bottom_index = GetIndex(i + 1, j, width);
-                particle_system_.AddSpring(index, bottom_index, 0.5f, 50.0f);
+                particle_system_.AddSpring(index, bottom_index, 0.5f, 100.0f);
             }
             // shear springs
             if (i < height - 1 && j < width - 1) { // bottom-right neighbor
                 int bottom_right_index = GetIndex(i + 1, j + 1, width);
-                particle_system_.AddSpring(index, bottom_right_index, glm::length(glm::vec3(0.5f, -0.5f, 0.0f)), 50.0f);
+                particle_system_.AddSpring(index, bottom_right_index, glm::length(glm::vec3(0.5f, -0.5f, 0.0f)), 100.0f);
             }
             if (i < height - 1 && j > 0) { // bottom-left neighbor
                 int bottom_left_index = GetIndex(i + 1, j - 1, width);
-                particle_system_.AddSpring(index, bottom_left_index, glm::length(glm::vec3(-0.5f, -0.5f, 0.0f)), 50.0f);
+                particle_system_.AddSpring(index, bottom_left_index, glm::length(glm::vec3(-0.5f, -0.5f, 0.0f)), 100.0f);
             }
             // bend springs
             if (j < width - 2) { // right-right neighbor
                 int right_right_index = GetIndex(i, j + 2, width);
-                particle_system_.AddSpring(index, right_right_index, 1.0f, 50.0f);
+                particle_system_.AddSpring(index, right_right_index, 1.0f, 100.0f);
             }
             if (i < height - 2) { // bottom-bottom neighbor
                 int bottom_bottom_index = GetIndex(i + 2, j, width);
-                particle_system_.AddSpring(index, bottom_bottom_index, 1.0f, 50.0f);
+                particle_system_.AddSpring(index, bottom_bottom_index, 1.0f, 100.0f);
             }
         }
     }
