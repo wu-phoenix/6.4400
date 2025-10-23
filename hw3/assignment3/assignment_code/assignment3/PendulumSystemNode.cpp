@@ -33,13 +33,19 @@ PendulumSystemNode::PendulumSystemNode(
     particle_state_.velocities.push_back(glm::vec3(0.0f));
     particle_state_.positions.push_back(glm::vec3(0.0f, 0.0f, -1.0f));
     particle_state_.velocities.push_back(glm::vec3(-1.0f));
-    
+    //create additional 2 particles
+    particle_state_.positions.push_back(glm::vec3(0.0f, 0.0f, -2.0f));
+    particle_state_.velocities.push_back(glm::vec3(-1.0f));
+    particle_state_.positions.push_back(glm::vec3(0.0f, 0.0f, -3.0f));
+    particle_state_.velocities.push_back(glm::vec3(-1.0f));
+
+
 
     // set parameters of the pendulum system like gravity
     particle_system_ = PendulumSystem();
     particle_system_.SetFixedIndices({0});
-    particle_system_.SetMasses({1.0f, 1.0f});
-    particle_system_.SetSprings({glm::vec4(0, 1, 1.0f, 50.0f)});
+    particle_system_.SetMasses({1.0f, 1.0f, 1.0f, 1.0f});
+    particle_system_.SetSprings({glm::vec4(0, 1, 1.0f, 50.0f), glm::vec4(1, 2, 1.0f, 50.0f), glm::vec4(2, 3, 1.0f, 50.0f)});
     particle_system_.SetDragCoefficient(0.1f);
     particles_.resize(particle_state_.positions.size());
 
