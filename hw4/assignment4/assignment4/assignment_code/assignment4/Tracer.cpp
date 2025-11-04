@@ -143,18 +143,6 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
   return GetBackgroundColor(ray.GetDirection());
 }
 
-// glm::vec3 Tracer::PhongDiffuse(const LightComponent& light_component, const HitRecord& record, const Ray& ray) const {
-// // (max of (0, L_dir*N_dir)) *k_dif*L_intensity
-
-// glm::vec3 dir_to_light = glm::vec3((0,0,0));
-// glm::vec3 intensity = glm::vec3((0,0,0));
-// float dist_to_light = 0;
-// Illuminator::GetIllumination(light_component, ray.At(record.time), dir_to_light, intensity, dist_to_light);
-
-// float coeff = std::max(0.0f, glm::dot(record.normal, dir_to_light));
-// return intensity * coeff * light_component.GetNodePtr()->GetComponentPtr<MaterialComponent>()->GetMaterial().GetDiffuseColor();
-
-// }
 glm::vec3 Tracer::GetBackgroundColor(const glm::vec3& direction) const {
   if (cube_map_ != nullptr) {
     return cube_map_->GetTexel(direction);
