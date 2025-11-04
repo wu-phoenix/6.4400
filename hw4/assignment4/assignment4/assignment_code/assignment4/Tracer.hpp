@@ -36,6 +36,8 @@ class Tracer {
 
   glm::vec3 GetBackgroundColor(const glm::vec3& direction) const;
 
+  glm::vec3 PhongDiffuse(const LightComponent& light_component, const HitRecord& record, const Ray& ray) const;
+
   PerspectiveCamera camera_;
   glm::ivec2 image_size_;
   size_t max_bounces_;
