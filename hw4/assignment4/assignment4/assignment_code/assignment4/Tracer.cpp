@@ -37,7 +37,7 @@ void Tracer::Render(const Scene& scene, const std::string& output_file) {
 
       // Map to camera image plane
       float sx = (2.0f * u - 1.0f) * aspect;  // [-aspect, +aspect]
-      float sy = 1.0f - 2.0f * v;             // [-1, +1], +Y is up
+      float sy = -(1.0f - 2.0f * v);             // [-1, +1], +Y is up
 
 
       Ray ray = camera_.GenerateRay({sx, sy});
@@ -85,7 +85,7 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
       // compute world-space hit and distance to camera
       glm::vec3 local_hit = local_ray.At(tmp.time);
       glm::vec3 world_hit = glm::vec3(local_to_world * glm::vec4(local_hit, 1.0f));
-      glm::vec3 cam_pos = camera_.GenerateRay(glm::vec2(0.0f)).GetOrigin();
+      glm::vec3 cam_pos = ray.GetOrigin();
       float world_dist = glm::length(world_hit - cam_pos);
 
       if (world_dist < closest_world_dist) {
@@ -102,7 +102,7 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
   }
 
   if (hit_something_local) {
-    std::cout << "Closest hit at time: " << best_record.time << " with normal: " << glm::to_string(best_record.normal) << std::endl;
+    // std::cout << "Closest hit at time: " << best_record.time << " with normal: " << glm::to_string(best_record.normal) << std::endl;
     glm::vec3 collision_point = best_world_hit;
     glm::vec3 diffuse_color = glm::vec3(0,0,0);
     auto mat_comp = closest_obj->GetNodePtr()->GetComponentPtr<MaterialComponent>();
@@ -115,7 +115,7 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
       glm::vec3 mat_diffuse = mat_comp ? mat_comp->GetMaterial().GetDiffuseColor() : glm::vec3(1.0f);
       diffuse_color += intensity * coeff * mat_diffuse;
     }
-    std::cout << "Diffuse color: " << glm::to_string(diffuse_color) << std::endl;
+    // std::cout << "Diffuse color: " << glm::to_string(diffuse_color) << std::endl;
 
     glm::vec3 specular_color(0.0f);
     glm::vec3 view_dir = glm::normalize(-ray.GetDirection());
@@ -130,7 +130,7 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
       float spec_coeff = pow(std::max(glm::dot(view_dir, reflect_dir), 0.0f), shininess);
       specular_color += intensity * spec_coeff * mat_spec;
     }
-    std::cout << "Specular color: " << glm::to_string(specular_color) << std::endl;
+    // std::cout << "Specular color: " << glm::to_string(specular_color) << std::endl;
     glm::vec3 ambient_color = glm::vec3(0,0,0); // scene ambient currently unused
     glm::vec3 total_color = diffuse_color + specular_color + ambient_color;
     record = best_record;

@@ -3,7 +3,7 @@
 namespace GLOO {
 Plane::Plane(const glm::vec3& normal, float d) {
   normal_ = normal;
-  d_ = d;
+  d_ = -d;
 }
 
 bool Plane::Intersect(const Ray& ray, float t_min, HitRecord& record) const {
