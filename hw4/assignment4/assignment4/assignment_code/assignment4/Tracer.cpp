@@ -61,7 +61,12 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
   // TODO: Compute the color for the cast ray.
 
   // do cases of bouncing/reflection later
-  // std::cout << "rendering ray: " << glm::to_string(ray.GetOrigin()) << " dir: " << glm::to_string(ray.GetDirection()) << std::endl;
+  // time to do bouncing
+  if (bounces < 0) {
+    return glm::vec3(0.0f);
+  }
+
+  
 
   bool hit_something_local = false;
   TracingComponent* closest_obj = nullptr;
@@ -107,10 +112,45 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
     glm::vec3 diffuse_color = glm::vec3(0,0,0);
     auto mat_comp = closest_obj->GetNodePtr()->GetComponentPtr<MaterialComponent>();
     for (LightComponent* light_component : light_components_) {
+      // query illumination first (gives direction and distance to light)
       glm::vec3 dir_to_light(0.0f);
       glm::vec3 intensity(0.0f);
       float dist_to_light = 0.0f;
       Illuminator::GetIllumination(*light_component, collision_point, dir_to_light, intensity, dist_to_light);
+      
+      if (shadows_enabled_){
+      // send out light rays to check shadows (use dir_to_light)
+      Ray shadow_ray(collision_point + 0.001f * best_record.normal, dir_to_light);
+      HitRecord shadow_record;
+      bool in_shadow = false;
+
+      for (TracingComponent* obj : tracing_components_) {
+        SceneNode* node = obj->GetNodePtr();
+        glm::mat4 local_to_world = node->GetTransform().GetLocalToWorldMatrix();
+        glm::mat4 world_to_local = glm::inverse(local_to_world);
+        const HittableBase& hittable = obj->GetHittable();
+
+        Ray local_ray = shadow_ray;
+        local_ray.ApplyTransform(world_to_local);
+
+        HitRecord tmp;
+        if (hittable.Intersect(local_ray, 0.001f, tmp)) {
+          // compute world-space hit and distance from shadow origin
+          glm::vec3 local_hit = local_ray.At(tmp.time);
+          glm::vec3 world_hit = glm::vec3(local_to_world * glm::vec4(local_hit, 1.0f));
+          float dist_to_hit = glm::length(world_hit - shadow_ray.GetOrigin());
+          if (dist_to_hit < dist_to_light) {
+            shadow_record = tmp;
+            in_shadow = true;
+            break; // in shadow
+          }
+        }
+      }
+
+      if (in_shadow) {
+        continue;
+      }
+    }
       float coeff = std::max(0.0f, glm::dot(best_record.normal, dir_to_light));
       glm::vec3 mat_diffuse = mat_comp ? mat_comp->GetMaterial().GetDiffuseColor() : glm::vec3(1.0f);
       diffuse_color += intensity * coeff * mat_diffuse;
@@ -122,10 +162,44 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
     glm::vec3 mat_spec = mat_comp ? mat_comp->GetMaterial().GetSpecularColor() : glm::vec3(0.0f);
     float shininess = mat_comp ? mat_comp->GetMaterial().GetShininess() : 1.0f;
     for (LightComponent* light_component : light_components_) {
+      // query illumination first
       glm::vec3 dir_to_light(0.0f);
       glm::vec3 intensity(0.0f);
       float dist_to_light = 0.0f;
       Illuminator::GetIllumination(*light_component, collision_point, dir_to_light, intensity, dist_to_light);
+
+      if (shadows_enabled_){
+      // send out light rays to check shadows
+      Ray shadow_ray(collision_point + 0.001f * best_record.normal, dir_to_light);
+      HitRecord shadow_record;
+      bool in_shadow = false; 
+
+      for (TracingComponent* obj : tracing_components_) {
+        SceneNode* node = obj->GetNodePtr();
+        glm::mat4 local_to_world = node->GetTransform().GetLocalToWorldMatrix();
+        glm::mat4 world_to_local = glm::inverse(local_to_world);
+        const HittableBase& hittable = obj->GetHittable();
+
+        Ray local_ray = shadow_ray;
+        local_ray.ApplyTransform(world_to_local);
+
+        HitRecord tmp;
+        if (hittable.Intersect(local_ray, 0.001f, tmp)) {
+          glm::vec3 local_hit = local_ray.At(tmp.time);
+          glm::vec3 world_hit = glm::vec3(local_to_world * glm::vec4(local_hit, 1.0f));
+          float dist_to_hit = glm::length(world_hit - shadow_ray.GetOrigin());
+          if (dist_to_hit < dist_to_light) {
+            shadow_record = tmp;
+            in_shadow = true;
+            break; // in shadow
+          }
+        }
+      }
+
+      if (in_shadow) {
+        continue;
+      } 
+    }
       glm::vec3 reflect_dir = glm::reflect(-dir_to_light, best_record.normal);
       float spec_coeff = pow(std::max(glm::dot(view_dir, reflect_dir), 0.0f), shininess);
       specular_color += intensity * spec_coeff * mat_spec;
@@ -134,6 +208,13 @@ glm::vec3 Tracer::TraceRay(const Ray& ray,
     glm::vec3 ambient_color = glm::vec3(0,0,0); // scene ambient currently unused
     glm::vec3 total_color = diffuse_color + specular_color + ambient_color;
     record = best_record;
+
+    if (bounces > 0) {
+      // recurse
+      glm::vec3 reflected_color = TraceRay(Ray(best_world_hit + 0.001f * best_record.normal, glm::reflect(ray.GetDirection(), best_record.normal)), bounces - 1, record); // add epsilon offset to avoid self-intersection
+      total_color += reflected_color * mat_comp->GetMaterial().GetSpecularColor();
+    }
+
     return total_color;
   }
 

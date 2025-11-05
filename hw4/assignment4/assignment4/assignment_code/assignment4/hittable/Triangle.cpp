@@ -27,7 +27,7 @@ Triangle::Triangle(const std::vector<glm::vec3>& positions,
 
 bool Triangle::Intersect(const Ray& ray, float t_min, HitRecord& record) const {
   // TODO: Implement ray-triangle intersection.
-
+  // 
   // line equations e1, e2
   glm::vec3 e1 = positions_[1] - positions_[0];
   glm::vec3 e2 = positions_[2] - positions_[0];
