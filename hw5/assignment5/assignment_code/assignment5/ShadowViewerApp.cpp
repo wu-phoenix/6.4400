@@ -78,8 +78,8 @@ void ShadowViewerApp::SetupScene() {
   for (const auto& group : mesh_data.groups) {
     auto node = make_unique<SceneNode>();
 
-    // auto rendering_component = std::make_shared<RenderingComponent>(vertex_obj);
-    // rendering_component->SetDrawRange(group.start_face_index, group.num_indices);
+      // auto rendering_component = std::make_shared<RenderingComponent>(vertex_obj);
+      // rendering_component->SetDrawRange(group.start_face_index, group.num_indices);
 
     node->CreateComponent<RenderingComponent>(vertex_obj);
     node->GetComponentPtr<RenderingComponent>()->SetDrawRange(group.start_face_index, group.num_indices);

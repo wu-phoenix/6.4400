@@ -42,6 +42,14 @@ vec3 CalcAmbientLight();
 vec3 CalcPointLight(vec3 normal, vec3 view_dir);
 vec3 CalcDirectionalLight(vec3 normal, vec3 view_dir);
 
+uniform bool ambient_texture_enabled; // whether to use texture or native material
+uniform bool diffuse_texture_enabled;
+uniform bool specular_texture_enabled;
+
+uniform sampler2D ambient_text; // the textures themselves
+uniform sampler2D diffuse_text;
+uniform sampler2D specular_text;
+
 void main() {
     vec3 normal = normalize(world_normal);
     vec3 view_dir = normalize(camera_position - world_position);
@@ -62,14 +70,23 @@ void main() {
 }
 
 vec3 GetAmbientColor() {
+    if (ambient_texture_enabled){
+        return texture(ambient_text,  tex_coord).rgb;
+    } 
     return material.ambient;
 }
 
 vec3 GetDiffuseColor() {
+    if (diffuse_texture_enabled){
+        return texture(diffuse_text, tex_coord).rgb;
+    }
     return material.diffuse;
 }
 
 vec3 GetSpecularColor() {
+    if (specular_texture_enabled){
+        return texture(specular_text, tex_coord).rgb;
+    }
     return material.specular;
 }
 
