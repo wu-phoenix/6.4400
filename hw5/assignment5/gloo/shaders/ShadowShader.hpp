@@ -10,7 +10,7 @@ class ShadowShader : public ShaderProgram {
   ShadowShader();
   void SetTargetNode(const SceneNode& node,
                      const glm::mat4& model_matrix) const override;
-  void SetCamera(const glm::mat4& world_to_ndc_matrix) const;
+  void SetCamera(const glm::mat4& world_to_ndc_matrix, const glm::mat4& view_matrix) const;
 
  private:
   void AssociateVertexArray(VertexArray& vertex_array) const;

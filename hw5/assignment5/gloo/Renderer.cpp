@@ -98,7 +98,7 @@ void Renderer::RenderShadow(const Scene& scene, LightComponent& light) const {
 
   glm::vec3 center = scene.GetRootNode().GetTransform().GetWorldPosition();
   glm::vec3 light_direction = -static_cast<DirectionalLight*>(light.GetLightPtr())->GetDirection();
-  glm::vec3 light_position = center - light_direction * 50.0f;
+  glm::vec3 light_position = center + light_direction * 50.0f;
   glm::mat4 light_view = glm::lookAt(light_position, center, glm::vec3(0.0f, 1.0f, 0.0f));
   glm::mat4 world_to_light_ndc_matrix = kLightProjection * light_view;
 
@@ -118,8 +118,9 @@ void Renderer::RenderShadow(const Scene& scene, LightComponent& light) const {
     // std::cout << "flag for Bindguard 116" << std::endl;
 
     shader.SetTargetNode(node, pr.second);
-    shader.SetCamera(world_to_light_ndc_matrix);
-
+    shader.SetCamera(world_to_light_ndc_matrix, light_view);    
+    // shader.SetUniform("projection_matrix", kLightProjection);
+    // shader.SetUniform("view_matrix", light_view);
     robj_ptr->Render();
   }
 
@@ -173,6 +174,7 @@ void Renderer::RenderScene(const Scene& scene) const {
       // Set various uniform variables in the shaders.
       shader->SetTargetNode(node, pr.second);
       shader->SetCamera(*camera);
+      
 
       robj_ptr->Render();
     }
@@ -220,7 +222,7 @@ void Renderer::RenderScene(const Scene& scene) const {
 
       glm::vec3 center = scene.GetRootNode().GetTransform().GetWorldPosition();
       glm::vec3 light_direction = -static_cast<DirectionalLight*>(light.GetLightPtr())->GetDirection();
-      glm::vec3 light_position = center - light_direction * 50.0f;
+      glm::vec3 light_position = center + light_direction * 50.0f;
       glm::mat4 light_view = glm::lookAt(light_position, center, glm::vec3(0.0f, 1.0f, 0.0f));
       glm::mat4 world_to_light_ndc_matrix = kLightProjection * light_view;
 

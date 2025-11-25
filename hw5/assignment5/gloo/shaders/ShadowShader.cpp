@@ -16,8 +16,8 @@
 namespace GLOO {
 ShadowShader::ShadowShader()
     : ShaderProgram(std::unordered_map<GLenum, std::string>(
-          {{GL_VERTEX_SHADER, "simple.vert"},
-           {GL_FRAGMENT_SHADER, "simple.frag"}})) {
+          {{GL_VERTEX_SHADER, "shadow.vert"},
+           {GL_FRAGMENT_SHADER, "shadow.frag"}})) {
 }
 
 void ShadowShader::AssociateVertexArray(VertexArray& vertex_array) const {
@@ -38,8 +38,10 @@ void ShadowShader::SetTargetNode(const SceneNode& node,
   SetUniform("model_matrix", model_matrix);
 }
 
-void ShadowShader::SetCamera(const glm::mat4& world_to_ndc_matrix) const {
-  SetUniform("world_to_light_ndc_matrix", world_to_ndc_matrix);
+void ShadowShader::SetCamera(const glm::mat4& world_to_ndc_matrix, const glm::mat4& view_matrix) const {
+  SetUniform("world_to_light_ndc_matrix", world_to_ndc_matrix); 
+  SetUniform("view_matrix", view_matrix);
+//   SetUniform("projection_matrix", projection_matrix);
 }
 
 }  // namespace GLOO
