@@ -37,7 +37,11 @@ class ShaderProgram : public IBindable {
   virtual void SetShadowMapping(
       const Texture& shadow_texture,
       const glm::mat4& world_to_light_NDC_matrix) const {
+    // By default, disable shadow mapping in shaders unless a subclass
+    // explicitly enables and sets the shadow map.
+    SetUniform("shadow_map_enabled", 0);
   }
+
 
  protected:
   // Protected because only shader subclasses have information to the names.

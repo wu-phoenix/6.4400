@@ -1,9 +1,10 @@
-CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
- /home/phoenix/Documents/6.4400/hw5/assignment5/assignment_code/assignment5/ShadowViewerApp.cpp \
+CMakeFiles/assignment5.dir/gloo/shaders/ShadowShader.cpp.o: \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShadowShader.cpp \
  /usr/include/stdc-predef.h \
- /home/phoenix/Documents/6.4400/hw5/assignment5/assignment_code/assignment5/ShadowViewerApp.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Application.hpp \
- /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShadowShader.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShaderProgram.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/IBindable.hpp \
+ /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -14,6 +15,10 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+ /usr/include/c++/11/bits/stringfwd.h \
+ /usr/include/c++/11/bits/memoryfwd.h \
+ /usr/include/c++/11/bits/char_traits.h \
+ /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/c++/11/bits/functexcept.h \
  /usr/include/c++/11/bits/exception_defines.h \
  /usr/include/c++/11/bits/cpp_type_traits.h \
@@ -28,43 +33,14 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /usr/include/c++/11/bits/stl_iterator.h \
  /usr/include/c++/11/bits/ptr_traits.h /usr/include/c++/11/debug/debug.h \
  /usr/include/c++/11/bits/predefined_ops.h \
- /usr/include/c++/11/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
- /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
- /usr/include/c++/11/bits/exception.h \
- /usr/include/c++/11/bits/memoryfwd.h \
- /usr/include/c++/11/bits/stl_construct.h \
- /usr/include/c++/11/bits/stl_uninitialized.h \
- /usr/include/c++/11/ext/alloc_traits.h \
- /usr/include/c++/11/bits/alloc_traits.h \
- /usr/include/c++/11/bits/stl_tempbuf.h \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /usr/include/c++/11/bits/postypes.h /usr/include/c++/11/cwchar \
+ /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/c++/11/bits/uses_allocator.h \
- /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/utility \
- /usr/include/c++/11/bits/stl_relops.h \
- /usr/include/c++/11/initializer_list /usr/include/c++/11/tuple \
- /usr/include/c++/11/array /usr/include/c++/11/bits/range_access.h \
- /usr/include/c++/11/bits/invoke.h \
- /usr/include/c++/11/bits/stl_function.h \
- /usr/include/c++/11/backward/binders.h \
- /usr/include/c++/11/bits/functional_hash.h \
- /usr/include/c++/11/bits/hash_bytes.h \
- /usr/include/c++/11/bits/shared_ptr.h /usr/include/c++/11/iosfwd \
- /usr/include/c++/11/bits/stringfwd.h /usr/include/c++/11/bits/postypes.h \
- /usr/include/c++/11/cwchar /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
@@ -72,18 +48,37 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/c++/11/bits/shared_ptr_base.h /usr/include/c++/11/typeinfo \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/bits/refwrap.h \
- /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/cstdint \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/c++/11/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
+ /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
+ /usr/include/c++/11/bits/exception.h \
+ /usr/include/c++/11/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h \
+ /usr/include/c++/11/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/11/iosfwd \
+ /usr/include/c++/11/cctype /usr/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endianness.h \
+ /usr/include/c++/11/bits/ostream_insert.h \
+ /usr/include/c++/11/bits/cxxabi_forced.h \
+ /usr/include/c++/11/bits/stl_function.h \
+ /usr/include/c++/11/backward/binders.h \
+ /usr/include/c++/11/bits/range_access.h \
+ /usr/include/c++/11/initializer_list \
+ /usr/include/c++/11/bits/basic_string.h \
  /usr/include/c++/11/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
@@ -107,22 +102,9 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h \
  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
- /usr/include/c++/11/ext/concurrence.h /usr/include/c++/11/exception \
- /usr/include/c++/11/bits/exception_ptr.h \
- /usr/include/c++/11/bits/cxxabi_init_exception.h \
- /usr/include/c++/11/bits/nested_exception.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/bits/atomic_base.h \
- /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /usr/include/c++/11/backward/auto_ptr.h /usr/include/c++/11/string \
- /usr/include/c++/11/bits/char_traits.h /usr/include/c++/11/cstdint \
- /usr/include/c++/11/bits/localefwd.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h \
- /usr/include/c++/11/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/11/cctype \
- /usr/include/ctype.h /usr/include/c++/11/bits/ostream_insert.h \
- /usr/include/c++/11/bits/cxxabi_forced.h \
- /usr/include/c++/11/bits/basic_string.h \
+ /usr/include/c++/11/ext/alloc_traits.h \
+ /usr/include/c++/11/bits/alloc_traits.h \
+ /usr/include/c++/11/bits/stl_construct.h \
  /usr/include/c++/11/ext/string_conversions.h /usr/include/c++/11/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -145,7 +127,23 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
+ /usr/include/c++/11/bits/functional_hash.h \
+ /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/basic_string.tcc \
+ /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glad/include/glad/glad.h \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glad/include/KHR/khrplatform.h \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/VertexArray.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/IBindable.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/external.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/imgui/imgui.h \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/imgui/imconfig.h \
@@ -153,8 +151,6 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /usr/include/strings.h /usr/include/assert.h \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/imgui/examples/imgui_impl_glfw.h \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/imgui/examples/imgui_impl_opengl3.h \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glad/include/glad/glad.h \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glad/include/KHR/khrplatform.h \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glfw-3.3.2/include/GLFW/glfw3.h \
  /usr/include/GL/gl.h \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/glm.hpp \
@@ -313,17 +309,20 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/detail/type_half.inl \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/integer.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/detail/func_integer.inl \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Scene.hpp \
- /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/alias_types.hpp \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/SceneNode.hpp \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/iostream \
- /usr/include/c++/11/ostream /usr/include/c++/11/ios \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/VertexBuffer.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/BindableBuffer.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/BindGuard.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/utils.hpp \
+ /usr/include/c++/11/sstream /usr/include/c++/11/istream \
+ /usr/include/c++/11/ios /usr/include/c++/11/exception \
+ /usr/include/c++/11/bits/exception_ptr.h \
+ /usr/include/c++/11/bits/cxxabi_init_exception.h \
+ /usr/include/c++/11/typeinfo /usr/include/c++/11/bits/nested_exception.h \
  /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \
  /usr/include/c++/11/bits/locale_classes.tcc \
@@ -338,14 +337,22 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /usr/include/c++/11/bits/streambuf_iterator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
  /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc \
- /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
+ /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ComponentBase.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ComponentType.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/utils.hpp \
- /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ComponentType.hpp \
+ /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/unique_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/bits/refwrap.h /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtc/quaternion.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtc/constants.hpp \
@@ -383,66 +390,23 @@ CMakeFiles/assignment5.dir/assignment_code/assignment5/ShadowViewerApp.cpp.o: \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtc/epsilon.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/detail/setup.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtc/epsilon.inl \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Image.hpp \
+ /usr/include/c++/11/iostream \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/CameraComponent.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ComponentBase.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Renderer.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ComponentType.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/LightComponent.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/LightBase.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/RenderingComponent.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/VertexObject.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/VertexArray.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/IBindable.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/external.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/alias_types.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/VertexBuffer.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/BindableBuffer.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/BindGuard.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Image.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/PlainTextureShader.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShaderProgram.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/IBindable.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Transform.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Framebuffer.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtx/string_cast.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtc/type_precision.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtc/vec1.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_bool1.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_bool1_precision.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_float1.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_float1_precision.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_double1.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_double1_precision.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_int1.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_int1_sized.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_uint1.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/ext/vector_uint1_sized.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtc/type_precision.inl \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtx/dual_quaternion.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtx/dual_quaternion.inl \
- /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glm-0.9.9.8/glm/gtx/string_cast.inl \
- /usr/include/c++/11/cstdarg \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/PhongShader.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/SimpleShader.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/RenderingComponent.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ShadingComponent.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShaderProgram.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/CameraComponent.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/LightComponent.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/MaterialComponent.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Material.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/MeshLoader.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/parsers/ObjParser.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/MeshData.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/MeshData.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/SceneNode.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ComponentBase.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ComponentType.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/AmbientLight.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/LightBase.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/PointLight.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/cameras/BasicCameraNode.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/SceneNode.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/cameras/ArcBallCameraNode.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/debug/PrimitiveFactory.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/assignment_code/assignment5/SunNode.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/DirectionalLight.hpp
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/PointLight.hpp

@@ -32,7 +32,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -80,7 +79,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -99,8 +97,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -166,8 +162,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.o
  /usr/include/assert.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
  /usr/include/limits.h
@@ -206,7 +200,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -254,7 +247,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -273,8 +265,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -339,15 +329,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.o
  /usr/include/regex.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/assert.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/glx_context.c.o
@@ -381,7 +367,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/glx_context.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -429,7 +414,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/glx_context.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -448,8 +432,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/glx_context.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -514,15 +496,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/glx_context.c.o
  /usr/include/regex.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/assert.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.o
@@ -556,7 +534,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -604,7 +581,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -623,8 +599,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -690,15 +664,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.o
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glfw-3.3.2/src/mappings.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/assert.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o
@@ -732,7 +702,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -780,7 +749,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -799,8 +767,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -877,13 +843,9 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glfw-3.3.2/src/linux_joystick.c
@@ -916,7 +878,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -964,7 +925,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -983,8 +943,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -1055,7 +1013,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o
  /usr/include/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
- /usr/include/x86_64-linux-gnu/bits/fcntl2.h
  /usr/include/errno.h
  /usr/include/x86_64-linux-gnu/bits/errno.h
  /usr/include/linux/errno.h
@@ -1071,13 +1028,9 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/linux_joystick.c.o
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.o
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glfw-3.3.2/src/monitor.c
@@ -1110,7 +1063,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -1158,7 +1110,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -1177,8 +1128,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -1253,15 +1202,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
  /usr/include/limits.h
@@ -1307,7 +1252,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h
@@ -1315,15 +1259,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/string.h
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/assert.h
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glfw-3.3.2/src/internal.h
  /home/phoenix/Documents/6.4400/hw5/assignment5/build/external/src/glfw-3.3.2/src/glfw_config.h
@@ -1339,7 +1279,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -1381,8 +1320,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -1475,7 +1412,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_thread.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -1523,7 +1459,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_thread.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -1542,8 +1477,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_thread.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -1609,8 +1542,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_thread.c.o
  /usr/include/assert.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_time.c.o
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glfw-3.3.2/src/posix_time.c
@@ -1643,7 +1574,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_time.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -1691,7 +1621,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_time.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -1710,8 +1639,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_time.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -1806,7 +1733,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -1854,7 +1780,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -1873,8 +1798,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -1940,15 +1863,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.o
  /usr/include/assert.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.o
  /home/phoenix/Documents/6.4400/hw5/assignment5/external/src/glfw-3.3.2/src/window.c
@@ -1981,7 +1900,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -2029,7 +1947,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -2048,8 +1965,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -2115,15 +2030,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.o
  /usr/include/assert.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h
 
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_init.c.o
@@ -2157,7 +2068,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_init.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -2205,7 +2115,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_init.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -2224,8 +2133,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_init.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -2293,13 +2200,9 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_init.c.o
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
  /usr/include/limits.h
@@ -2340,7 +2243,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_monitor.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -2388,7 +2290,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_monitor.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -2407,8 +2308,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_monitor.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -2481,13 +2380,9 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_monitor.c.o
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/math.h
  /usr/include/x86_64-linux-gnu/bits/math-vector.h
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h
@@ -2528,7 +2423,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_window.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -2576,7 +2470,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_window.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -2595,8 +2488,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_window.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h
@@ -2663,15 +2554,11 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/x11_window.c.o
  /usr/include/X11/Xmd.h
  /usr/include/string.h
  /usr/include/strings.h
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/alloca.h
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
- /usr/include/x86_64-linux-gnu/bits/stdlib.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
  /usr/include/limits.h
@@ -2717,7 +2604,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/xkb_unicode.c.o
  /usr/include/x86_64-linux-gnu/bits/confname.h
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/signal.h
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h
@@ -2765,7 +2651,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/xkb_unicode.c.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/bits/select.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
- /usr/include/x86_64-linux-gnu/bits/select2.h
  /usr/include/X11/X.h
  /usr/include/X11/Xfuncproto.h
  /usr/include/X11/Xosdefs.h
@@ -2784,8 +2669,6 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/xkb_unicode.c.o
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/x86_64-linux-gnu/bits/stdio.h
- /usr/include/x86_64-linux-gnu/bits/stdio2.h
  /usr/include/X11/extensions/Xrandr.h
  /usr/include/X11/extensions/randr.h
  /usr/include/X11/extensions/Xrender.h

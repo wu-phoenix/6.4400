@@ -49,6 +49,10 @@ uniform bool specular_texture_enabled;
 uniform sampler2D ambient_text; // the textures themselves
 uniform sampler2D diffuse_text;
 uniform sampler2D specular_text;
+// Shadow mapping uniforms
+uniform int shadow_map_enabled;
+uniform sampler2D shadow_map;
+uniform mat4 world_to_light_ndc_matrix;
 
 void main() {
     vec3 normal = normalize(world_normal);
@@ -128,6 +132,25 @@ vec3 CalcDirectionalLight(vec3 normal, vec3 view_dir) {
         light.specular * GetSpecularColor();
 
     vec3 final_color = diffuse_color + specular_color;
+
     return final_color;
+
+    // Shadow test
+     float shadow = 1.0;
+    if (shadow_map_enabled == 1) {
+        vec4 ls = world_to_light_ndc_matrix * vec4(world_position, 1.0);
+        // Project to NDC and then to [0,1]
+        vec3 proj = ls.xyz / ls.w;
+        vec2 uv = proj.xy * 0.5 + 0.5;
+        float depth = proj.z * 0.5 + 0.5;
+        // If outside shadow map, consider lit
+        if (uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0) {
+            float closest = texture(shadow_map, uv).r;
+            float bias = 0.001;
+            shadow = (depth - bias) > closest ? 0.0 : 1.0;
+        }
+    }
+
+    return shadow * final_color;
 }
 

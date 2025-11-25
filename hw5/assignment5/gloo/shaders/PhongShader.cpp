@@ -152,5 +152,15 @@ void PhongShader::SetShadowMapping(
     const glm::mat4& world_to_light_ndc_matrix) const {
   // TODO: set necessary uniforms for the shader and bind the texture to the
   // corresponding texture unit.
+  // Bind shadow map to texture unit 3.
+
+  
+
+  const int kShadowTexUnit = 3;
+  shadow_texture.BindToUnit(kShadowTexUnit);
+  SetUniform("shadow_map", kShadowTexUnit);
+  SetUniform("world_to_light_ndc_matrix", world_to_light_ndc_matrix);
+  // Enable shadow usage in shader.
+  SetUniform("shadow_map_enabled", 1);
 }
 }  // namespace GLOO
