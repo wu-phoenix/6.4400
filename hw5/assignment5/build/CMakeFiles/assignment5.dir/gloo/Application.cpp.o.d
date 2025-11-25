@@ -411,5 +411,7 @@ CMakeFiles/assignment5.dir/gloo/Application.cpp.o: \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/IBindable.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Framebuffer.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/InputManager.hpp \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h

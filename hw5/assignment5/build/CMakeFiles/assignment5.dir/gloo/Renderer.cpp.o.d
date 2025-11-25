@@ -429,9 +429,14 @@ CMakeFiles/assignment5.dir/gloo/Renderer.cpp.o: \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/IBindable.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/Transform.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Framebuffer.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/Texture.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/utils.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/gl_wrapper/BindGuard.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShaderProgram.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/components/ShadingComponent.hpp \
  /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShaderProgram.hpp \
- /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/debug/PrimitiveFactory.hpp
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/debug/PrimitiveFactory.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/DirectionalLight.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/lights/LightBase.hpp \
+ /home/phoenix/Documents/6.4400/hw5/assignment5/gloo/shaders/ShadowShader.hpp

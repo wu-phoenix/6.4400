@@ -5,6 +5,7 @@
 #include "components/RenderingComponent.hpp"
 #include "gl_wrapper/Texture.hpp"
 #include "shaders/PlainTextureShader.hpp"
+#include "gl_wrapper/Framebuffer.hpp"
 
 #include <unordered_map>
 
@@ -30,9 +31,12 @@ class Renderer {
 
   void RenderTexturedQuad(const Texture& texture, bool is_depth) const;
   void DebugShadowMap() const;
+  void RenderShadow(const Scene& scene, LightComponent& light)  const;
+
 
   std::unique_ptr<Texture> shadow_depth_tex_;
   std::unique_ptr<PlainTextureShader> plain_texture_shader_;
+  std::unique_ptr<Framebuffer> shadow_framebuffer_;
   Application& application_;
 };
 }  // namespace GLOO

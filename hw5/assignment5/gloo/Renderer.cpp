@@ -12,6 +12,10 @@
 #include "components/ShadingComponent.hpp"
 #include "components/CameraComponent.hpp"
 #include "debug/PrimitiveFactory.hpp"
+#include "shaders/PlainTextureShader.hpp"
+#include "lights/DirectionalLight.hpp"
+#include "shaders/ShadowShader.hpp"
+
 
 namespace {
 const size_t kShadowWidth = 4096;
@@ -24,6 +28,14 @@ namespace GLOO {
 Renderer::Renderer(Application& application) : application_(application) {
   UNUSED(application_);
   // TODO: you may want to initialize your framebuffer and texture(s) here.
+
+  plain_texture_shader_ = make_unique<PlainTextureShader>();
+  shadow_depth_tex_ = make_unique<Texture>(); //might need to set config options
+  shadow_depth_tex_->Reserve(GL_DEPTH_COMPONENT, kShadowWidth, kShadowHeight, GL_DEPTH_COMPONENT, GL_FLOAT);
+
+  shadow_framebuffer_ = make_unique<Framebuffer>();
+  shadow_framebuffer_->Bind();
+  shadow_framebuffer_->AssociateTexture(*shadow_depth_tex_, GL_DEPTH_ATTACHMENT);
 
   // To render a quad on in the lower-left of the screen, you can assign texture
   // to quad_ created below and then call quad_->GetVertexArray().Render().
@@ -47,6 +59,7 @@ void Renderer::Render(const Scene& scene) const {
   RenderScene(scene);
   // TODO: When debugging your shadow map, call DebugShadowMap to render a
   // quad at the bottom left corner to display the shadow map.
+  DebugShadowMap();
 }
 
 void Renderer::RecursiveRetrieve(const SceneNode& node,
@@ -73,6 +86,48 @@ Renderer::RenderingInfo Renderer::RetrieveRenderingInfo(
   RecursiveRetrieve(root, info, glm::mat4(1.0f));
   return info;
 }
+
+void Renderer::RenderShadow(const Scene& scene, LightComponent& light) const {
+  // set context to shadow framebuffer
+  BindGuard framebuffer_bg(shadow_framebuffer_.get());
+  // std::cout << "flag for Bindguard 93" << std::endl;
+  GL_CHECK(glViewport(0, 0, kShadowWidth, kShadowHeight));
+  GL_CHECK(glDepthMask(GL_TRUE));
+  GL_CHECK(glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE));
+  GL_CHECK(glClear(GL_DEPTH_BUFFER_BIT));
+
+  glm::vec3 center = scene.GetRootNode().GetTransform().GetWorldPosition();
+  glm::vec3 light_direction = -static_cast<DirectionalLight*>(light.GetLightPtr())->GetDirection();
+  glm::vec3 light_position = center - light_direction * 50.0f;
+  glm::mat4 light_view = glm::lookAt(light_position, center, glm::vec3(0.0f, 1.0f, 0.0f));
+  glm::mat4 world_to_light_ndc_matrix = kLightProjection * light_view;
+
+  // loop over all objects
+
+  ShadowShader shader;   
+
+  auto rendering_info = RetrieveRenderingInfo(scene);
+  for (const auto& pr : rendering_info) {
+    auto robj_ptr = pr.first;
+    SceneNode& node = *robj_ptr->GetNodePtr();
+    auto shading_ptr = node.GetComponentPtr<ShadingComponent>();
+    
+    
+    // std::cout << "flag for Bindguard 116+++" << std::endl;
+    BindGuard shader_bg(&shader);
+    // std::cout << "flag for Bindguard 116" << std::endl;
+
+    shader.SetTargetNode(node, pr.second);
+    shader.SetCamera(world_to_light_ndc_matrix);
+
+    robj_ptr->Render();
+  }
+
+  // reset viewport
+  GL_CHECK(glViewport(0, 0, application_.GetWindowSize().x,
+                        application_.GetWindowSize().y));
+}
+
 
 void Renderer::RenderScene(const Scene& scene) const {
   GL_CHECK(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
@@ -110,8 +165,10 @@ void Renderer::RenderScene(const Scene& scene) const {
         continue;
       }
       ShaderProgram* shader = shading_ptr->GetShaderPtr();
+      // std::cout << "flag for Bindguard 168+++" << std::endl;
 
       BindGuard shader_bg(shader);
+      // std::cout << "flag for Bindguard 168" << std::endl;
 
       // Set various uniform variables in the shaders.
       shader->SetTargetNode(node, pr.second);
@@ -121,12 +178,16 @@ void Renderer::RenderScene(const Scene& scene) const {
     }
   }
 
+  std::cout << "Rendering with " << light_ptrs.size() << " lights." << std::endl;
+
   // The real shadow map/Phong shading passes.
   for (size_t light_id = 0; light_id < light_ptrs.size(); light_id++) {
     // TODO: render the shadow map viewed from the light.
     // This should be rendered to the shadow framebuffer instead of the default
     // one. You should only render shadow if the light can cast shadow (e.g.
     // directional light).
+    LightComponent& light = *light_ptrs.at(light_id);
+    RenderShadow(scene, light);
 
     GL_CHECK(glDepthMask(GL_FALSE));
     bool color_mask = GL_TRUE;
@@ -142,8 +203,10 @@ void Renderer::RenderScene(const Scene& scene) const {
         continue;
       }
       ShaderProgram* shader = shading_ptr->GetShaderPtr();
+      // std::cout << "flag for Bindguard 205++" << std::endl;
 
       BindGuard shader_bg(shader);
+      // std::cout << "flag for Bindguard 205" << std::endl;
 
       // Set various uniform variables in the shaders.
       shader->SetTargetNode(node, pr.second);
@@ -154,6 +217,17 @@ void Renderer::RenderScene(const Scene& scene) const {
       // TODO: pass in the shadow texture to the shader via SetShadowMapping if
       // the light can cast shadow.
 
+
+      glm::vec3 center = scene.GetRootNode().GetTransform().GetWorldPosition();
+      glm::vec3 light_direction = -static_cast<DirectionalLight*>(light.GetLightPtr())->GetDirection();
+      glm::vec3 light_position = center - light_direction * 50.0f;
+      glm::mat4 light_view = glm::lookAt(light_position, center, glm::vec3(0.0f, 1.0f, 0.0f));
+      glm::mat4 world_to_light_ndc_matrix = kLightProjection * light_view;
+
+      if (light.CanCastShadow()) {
+        shader->SetShadowMapping(*shadow_depth_tex_, world_to_light_ndc_matrix);
+      }
+
       robj_ptr->Render();
     }
   }
@@ -163,7 +237,9 @@ void Renderer::RenderScene(const Scene& scene) const {
 }
 
 void Renderer::RenderTexturedQuad(const Texture& texture, bool is_depth) const {
+    // std::cout << "flag for Bindguard 234 ++" << std::endl;
   BindGuard shader_bg(plain_texture_shader_.get());
+  // std::cout << "flag for Bindguard 234" << std::endl;
   plain_texture_shader_->SetVertexObject(*quad_);
   plain_texture_shader_->SetTexture(texture, is_depth);
   quad_->GetVertexArray().Render();
