@@ -98,7 +98,7 @@ void Renderer::RenderShadow(const Scene& scene, LightComponent& light) const {
 
   glm::vec3 center = scene.GetRootNode().GetTransform().GetWorldPosition();
   glm::vec3 light_direction = -static_cast<DirectionalLight*>(light.GetLightPtr())->GetDirection();
-  glm::vec3 light_position = center + light_direction * 10.0f;
+  glm::vec3 light_position = center + light_direction * 50.0f;
   glm::mat4 light_view = glm::lookAt(light_position, center, glm::vec3(1.0f, 0.0f, 0.0f));
   glm::mat4 world_to_light_ndc_matrix = kLightProjection * light_view;
 
@@ -222,7 +222,7 @@ void Renderer::RenderScene(const Scene& scene) const {
 
       glm::vec3 center = scene.GetRootNode().GetTransform().GetWorldPosition();
       glm::vec3 light_direction = -static_cast<DirectionalLight*>(light.GetLightPtr())->GetDirection();
-      glm::vec3 light_position = center + light_direction * 10.0f;
+      glm::vec3 light_position = center + light_direction * 50.0f;
       glm::mat4 light_view = glm::lookAt(light_position, center, glm::vec3(1.0f, 0.0f, 0.0f));
       glm::mat4 world_to_light_ndc_matrix = kLightProjection * light_view;
 

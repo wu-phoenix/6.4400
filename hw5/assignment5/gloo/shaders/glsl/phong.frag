@@ -144,7 +144,7 @@ vec3 CalcDirectionalLight(vec3 normal, vec3 view_dir) {
 
         if (uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0) {
             float closest = texture(shadow_map, uv).r;
-            float bias = max(0.0005, 0.005 * (1.0 - max(dot(normal, light_dir), 0.0)));
+            float bias = max(0.001, 0.005 * (1.0 - max(dot(normal, light_dir), 0.0)));
             if (depth > closest + bias) {
                 shadowFactor = 0.0;
             }
