@@ -50,6 +50,11 @@ uniform sampler2D ambient_text; // the textures themselves
 uniform sampler2D diffuse_text;
 uniform sampler2D specular_text;
 
+// Shadow map and light-space matrix (world -> light NDC)
+uniform sampler2D shadow_map;
+uniform mat4 world_to_light_ndc_matrix;
+uniform int shadow_map_enabled;
+
 void main() {
     vec3 normal = normalize(world_normal);
     vec3 view_dir = normalize(camera_position - world_position);
@@ -128,6 +133,24 @@ vec3 CalcDirectionalLight(vec3 normal, vec3 view_dir) {
         light.specular * GetSpecularColor();
 
     vec3 final_color = diffuse_color + specular_color;
-    return final_color;
+
+    // Compute shadow factor by projecting into light NDC and sampling depth.
+    float shadowFactor = 1.0; // 1.0 = lit, 0.0 = in shadow
+    if (shadow_map_enabled == 1) {
+        vec4 ls = world_to_light_ndc_matrix * vec4(world_position, 1.0);
+        vec3 proj = ls.xyz / ls.w; // NDC in [-1,1]
+        vec2 uv = proj.xy * 0.5 + 0.5;
+        float depth = proj.z * 0.5 + 0.5;
+
+        if (uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0) {
+            float closest = texture(shadow_map, uv).r;
+            float bias = max(0.0005, 0.005 * (1.0 - max(dot(normal, light_dir), 0.0)));
+            if (depth > closest + bias) {
+                shadowFactor = 0.0;
+            }
+        }
+    }
+
+    return shadowFactor * final_color;
 }
 

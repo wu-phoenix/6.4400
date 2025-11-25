@@ -109,6 +109,9 @@ void PhongShader::SetCamera(const CameraComponent& camera) const {
 }
 
 void PhongShader::SetLightSource(const LightComponent& component) const {
+  // By default disable shadow sampling for this shader; SetShadowMapping
+  // will enable it when a shadow map is bound for the current light.
+  SetUniform("shadow_map_enabled", 0);
   auto light_ptr = component.GetLightPtr();
   if (light_ptr == nullptr) {
     throw std::runtime_error("Light component has no light attached!");
@@ -152,5 +155,10 @@ void PhongShader::SetShadowMapping(
     const glm::mat4& world_to_light_ndc_matrix) const {
   // TODO: set necessary uniforms for the shader and bind the texture to the
   // corresponding texture unit.
+    shadow_texture.BindToUnit(3);
+    SetUniform("shadow_map", 3);
+    SetUniform("world_to_light_ndc_matrix", world_to_light_ndc_matrix);
+    // Enable shadow sampling in the shader
+    SetUniform("shadow_map_enabled", 1);
 }
 }  // namespace GLOO
